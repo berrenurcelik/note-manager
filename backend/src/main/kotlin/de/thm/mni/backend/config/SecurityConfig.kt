@@ -22,7 +22,7 @@ class SecurityConfig {
             .authorizeHttpRequests {
                 it.requestMatchers(HttpMethod.OPTIONS, "/api/**").permitAll()
                 it.requestMatchers("/api/auth/**").permitAll()
-                it.requestMatchers(HttpMethod.POST, "/api/users").permitAll()
+                it.requestMatchers("/api/users/**").permitAll() 
                 it.anyRequest().authenticated()
             }
         return http.build()
