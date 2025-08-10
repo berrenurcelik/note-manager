@@ -1,4 +1,52 @@
+# IDE Files
 .idea/
+*.iml
+*.iws
+*.ipr
+
+# OS Files
 .DS_Store
+Thumbs.db
+
+# Logs
 *.log
+logs/
+
+# Archives
 *.zip
+*.tar.gz
+*.rar
+
+# VS Code (keep essential configs)
+.vscode/settings.json
+.vscode/launch.json
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/build/
+frontend/coverage/
+
+# Backend
+backend/.gradle/
+backend/build/
+backend/target/
+backend/out/
+backend/bin/
+
+# Database files (H2 file database if used)
+*.db
+*.sqlite
+*.trace.db
+*.lock.db
+
+# Environment files (add if you use them later)
+.env
+.env.local
+.env.production
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
