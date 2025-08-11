@@ -1,0 +1,11 @@
+{
+  "name": "note-manager-monorepo",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"cd backend && ./gradlew bootRun\" \"cd frontend && npm start\"",
+    "build": "concurrently \"cd backend && ./gradlew build\" \"cd frontend && npm run build\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

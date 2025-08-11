@@ -28,6 +28,8 @@ frontend/.angular/
 frontend/build/
 frontend/coverage/
 
+node_modules/ 
+
 # Backend
 backend/.gradle/
 backend/build/
