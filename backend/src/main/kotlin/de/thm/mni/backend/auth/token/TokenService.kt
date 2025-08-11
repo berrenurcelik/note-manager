@@ -32,7 +32,8 @@ class TokenService(
         .withSubject(user.id.toString())
         .withIssuedAt(Date())
         .withExpiresAt(Date(System.currentTimeMillis() + TIME_TO_LIVE))
-        .withClaim("roles", user.roles)
+        .withClaim("username", user.username)
+        .withClaim("email", user.email)
         .sign(Algorithm.RSA256(privateKey))
 
     fun isValid(token: String): Boolean {

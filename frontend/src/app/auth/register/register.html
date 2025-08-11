@@ -1,0 +1,70 @@
+<div class="register-container">
+  <h2>Create Account</h2>
+  
+  <form (ngSubmit)="onRegister()" class="register-form">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input 
+        id="username" 
+        [(ngModel)]="username" 
+        name="username" 
+        required 
+        placeholder="Enter username" />
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input 
+        id="firstName" 
+        [(ngModel)]="firstName" 
+        name="firstName" 
+        required 
+        placeholder="Enter first name" />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input 
+        id="lastName" 
+        [(ngModel)]="lastName" 
+        name="lastName" 
+        required 
+        placeholder="Enter last name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input 
+        id="email" 
+        [(ngModel)]="email" 
+        name="email" 
+        type="email" 
+        required 
+        placeholder="Enter email address" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input 
+        id="password" 
+        [(ngModel)]="password" 
+        name="password" 
+        type="password" 
+        required 
+        placeholder="Enter password" />
+    </div>
+
+    <button type="submit" class="register-btn">Create Account</button>
+    
+    <a routerLink="/login" class="login-link">
+      Already have an account? Login here
+    </a>
+  </form>
+
+  <div *ngIf="registerError" class="error-message">
+    Registration failed. Please try again.
+  </div>
+  <div *ngIf="registerSuccess" class="success-message">
+    Registration successful! Redirecting...
+  </div>
+</div>

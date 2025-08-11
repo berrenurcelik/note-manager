@@ -17,9 +17,9 @@ class UserApi(private val userService: UserService) {
     @PostMapping
     fun register(@RequestBody req: UserCreate): ResponseEntity<UserResponse> {
         logger.info("Register endpoint called with username: ${req.username}")
-        val user = userService.create(req.username, req.password)
+        val user = userService.create(req.username, req.firstName, req.lastName, req.email, req.password)
         logger.info("User created: $user")
-        return ResponseEntity.ok(UserResponse(user.id?.toString() ?: "", user.username, user.roles))
+        return ResponseEntity.ok(UserResponse(user.id?.toString() ?: "", user.username, user.firstName, user.lastName, user.email))
     }
 
     @GetMapping
@@ -27,7 +27,7 @@ class UserApi(private val userService: UserService) {
         logger.info("Get all users endpoint called")
         val users = userService.findAll()
         val userResponses = users.map { 
-            UserResponse(it.id?.toString() ?: "", it.username, it.roles) 
+            UserResponse(it.id?.toString() ?: "", it.username, it.firstName, it.lastName, it.email) 
         }
         return ResponseEntity.ok(userResponses)
     }
@@ -39,7 +39,7 @@ class UserApi(private val userService: UserService) {
             val uuid = UUID.fromString(id)
             val user = userService.findById(uuid)
             if (user != null) {
-                ResponseEntity.ok(UserResponse(user.id?.toString() ?: "", user.username, user.roles))
+                ResponseEntity.ok(UserResponse(user.id?.toString() ?: "", user.username, user.firstName, user.lastName, user.email))
             } else {
                 ResponseEntity.notFound().build()
             }
@@ -54,9 +54,9 @@ class UserApi(private val userService: UserService) {
         logger.info("Update user endpoint called with username: ${req.username}")
         return try {
             val uuid = UUID.fromString(id)
-            val updatedUser = userService.update(uuid, req.username, req.password)
+            val updatedUser = userService.update(uuid, req.username, req.firstName, req.lastName, req.email, req.password)
             if (updatedUser != null) {
-                ResponseEntity.ok(UserResponse(updatedUser.id?.toString() ?: "", updatedUser.username, updatedUser.roles))
+                ResponseEntity.ok(UserResponse(updatedUser.id?.toString() ?: "", updatedUser.username, updatedUser.firstName, updatedUser.lastName, updatedUser.email))
             } else {
                 ResponseEntity.notFound().build()
             }
