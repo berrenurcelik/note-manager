@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -8,10 +8,14 @@ import { CommonModule } from '@angular/common';
   selector: 'app-register',
   standalone: true,
   imports: [FormsModule, RouterLink, CommonModule],
-  templateUrl: './register.component.html',
+  templateUrl: './register.html',
+  styleUrl: './register.css'
 })
 export class RegisterComponent {
   username = '';
+  firstName = '';
+  lastName = '';
+  email = '';
   password = '';
   registerError = false;
   registerSuccess = false;
@@ -19,10 +23,18 @@ export class RegisterComponent {
   constructor(private auth: AuthService, private router: Router) {}
 
   onRegister() {
-    this.auth.register(this.username, this.password).subscribe({
+    const userData = {
+      username: this.username,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      password: this.password
+    };
+
+    this.auth.register(userData).subscribe({
       next: (res) => {
         this.registerSuccess = true;
-        console.log('User registered successfully:', { username: this.username });
+        console.log('User registered successfully:', userData);
         setTimeout(() => this.router.navigate(['/login']), 1000);
       },
       error: () => {

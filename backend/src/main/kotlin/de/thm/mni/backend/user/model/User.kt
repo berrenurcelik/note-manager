@@ -9,7 +9,8 @@ class User(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: UUID? = null,
     val username: String = "",
-    val password: String = "",
-    @ElementCollection
-    val roles: List<String> = listOf()
+    val firstName: String = "",
+    val lastName: String = "",
+    val email: String = "",
+    val password: String = ""
 )

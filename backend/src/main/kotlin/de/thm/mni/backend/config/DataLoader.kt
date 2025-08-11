@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component
  * and adds test users to the database. 
  * 
  * Test users:
- * - admin / admin123 (ADMIN, USER roles)
- * - user2 / 123 (USER role)
- * - user3 / 123 (USER role)
+ * - admin / 123
+ * - john.d / 123
+ * - jane.s / 123
  */
 @Component
 class DataLoader(
@@ -28,20 +28,26 @@ class DataLoader(
 
         val user1 = User(
             username = "admin", 
-            password = "admin123", 
-            roles = listOf("ADMIN", "USER")
+            firstName = "Admin",
+            lastName = "User",
+            email = "admin@example.com",
+            password = "123"
         )
         
         val user2 = User(
-            username = "user2", 
-            password = "123", 
-            roles = listOf("USER")
+            username = "john.doe", 
+            firstName = "John",
+            lastName = "D",
+            email = "john.d@example.com",
+            password = "123"
         )
         
         val user3 = User(
-            username = "user3", 
-            password = "123", 
-            roles = listOf("USER")
+            username = "jane.smith", 
+            firstName = "Jane",
+            lastName = "S",
+            email = "jane.s@example.com",
+            password = "123"
         )
         userRepository.saveAll(listOf(user1, user2, user3))
     }

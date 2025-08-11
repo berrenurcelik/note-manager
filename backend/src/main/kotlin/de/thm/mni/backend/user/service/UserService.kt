@@ -8,8 +8,8 @@ import java.util.UUID
 @Service
 class UserService(private val userRepository: UserRepository) {
     
-    fun create(username: String, password: String): User {
-        val user = User(username = username, password = password, roles = listOf("USER"))
+    fun create(username: String, firstName: String, lastName: String, email: String, password: String): User {
+        val user = User(username = username, firstName = firstName, lastName = lastName, email = email, password = password)
         return userRepository.save(user)
     }
 
@@ -18,14 +18,16 @@ class UserService(private val userRepository: UserRepository) {
     fun findByUsername(username: String): User? = userRepository.findByUsername(username)
     fun findAll(): List<User> = userRepository.findAll()
 
-    fun update(id: UUID, username: String, password: String): User? {
+    fun update(id: UUID, username: String, firstName: String, lastName: String, email: String, password: String): User? {
         val existingUser = userRepository.findById(id).orElse(null)
         return if (existingUser != null) {
             val updatedUser = User(
                 id = existingUser.id,
                 username = username,
-                password = password,
-                roles = existingUser.roles
+                firstName = firstName,
+                lastName = lastName,
+                email = email,
+                password = password
             )
             userRepository.save(updatedUser)
         } else {
