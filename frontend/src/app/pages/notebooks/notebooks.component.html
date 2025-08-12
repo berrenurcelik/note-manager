@@ -1,1 +1,17 @@
-<p>notebooks.component works!</p>
+<div class="card-grid">
+  <mat-card *ngFor="let notebook of notebooks" class="notebook-card" (click)="navigateToNotes(notebook.id)">
+    <mat-card-header>
+      <mat-card-title>{{ notebook.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="date">{{ notebook.createdAt }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="add-card">
+    <button mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+    <p>Neues Notizbuch anlegen</p>
+  </mat-card>
+</div>

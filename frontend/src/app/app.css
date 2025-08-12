@@ -1,0 +1,33 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile-icon {
+  margin-right: 16px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-details-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.profile-logout {
+  display: flex;
+}

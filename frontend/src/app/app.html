@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<header>
+  <mat-toolbar>
+    <button mat-icon-button aria-hidden="true" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Note Manager</h1>
+  </mat-toolbar>
+</header>
+
+<nav>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <div class="profile-container">
+        <div class="profile-row">
+          <div class="profile-icon">
+            <mat-icon>account_circle</mat-icon>
+          </div>
+          <div class="profile-details">
+            <div class="profile-details-row">
+              <div class="profile-name">
+                <div class="name">Hallo, Jasmin!</div>
+              </div>
+              <div class="profile-email">
+                <div class="email">jmsandhuweb.de</div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-logout">
+            <button (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</nav>

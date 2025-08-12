@@ -1,1 +1,17 @@
-<p>notes.component works!</p>
+<div class="card-grid">
+  <mat-card *ngFor="let note of notes" class="notebook-card">
+    <mat-card-header>
+      <mat-card-title>{{ note.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="date">{{ note.createdAt }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="add-card">
+    <button mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+    <p>Neue Notiz erstellen</p>
+  </mat-card>
+</div>

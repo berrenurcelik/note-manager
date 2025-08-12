@@ -1,0 +1,29 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.notebook-card,
+.add-card {
+  cursor: pointer;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-card {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  border-width: 2px;
+}
+
+.add-card mat-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+}
