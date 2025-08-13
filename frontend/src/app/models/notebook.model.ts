@@ -6,19 +6,19 @@ export class Notebook {
   public title: string;
   public createdAt: Date;
   public notes: Note[];
-  public user_id: string;
+  public userId: string;
 
   constructor(
     id: string,
     title: string,
     createdAt: Date,
     notes: Note[] = [],
-    user_id: string
+    userId: string
   ) {
     this.id = id;
     this.title = title;
     this.createdAt = createdAt;
     this.notes = notes;
-    this.user_id = user_id;
+    this.userId = userId;
   }
 }
