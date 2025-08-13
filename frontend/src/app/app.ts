@@ -1,32 +1,29 @@
-import {Component, signal, ViewChild} from '@angular/core';
-import { RouterOutlet} from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { Router, RouterOutlet, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {MatSidenav, MatSidenavContainer, MatSidenavContent} from '@angular/material/sidenav';
-import { Router } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { NotebooksComponent } from './pages/notebooks/notebooks.component';
-import { NotesComponent } from './pages/notes/notes.component';
-import {MatIconButton} from '@angular/material/button';
-import {MatToolbar} from '@angular/material/toolbar';
-import {MatDivider, MatNavList} from '@angular/material/list';
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, MatSidenavContainer, MatSidenav, MatSidenavContent, MatIconModule, RouterOutlet, MatIconButton, MatToolbar, MatNavList, MatDivider],
+  imports: [RouterOutlet, CommonModule, RouterModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  @ViewChild('sidenav') sidenav!: MatSidenav; // Hier selektieren Sie das Sidenav
-
+  protected readonly title = signal('Note Manager');
+  
   constructor(private router: Router) {}
 
-  protected readonly title = signal('frontend');
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
 
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
+  }
+
+  getCurrentRoute(): string {
+    return this.router.url;
   }
 }

@@ -36,3 +36,30 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </nav>
+----------------------------------------------
+<div class="app-container">
+  <header class="main-header" *ngIf="isLoggedIn()">
+    <div class="header-content">
+      <h1>📔 Note Manager</h1>
+      <nav class="main-nav">
+        <a routerLink="/notebooks"
+           [class.active]="getCurrentRoute().includes('/notebooks')"
+           class="nav-link">
+          📚 Notizbücher
+        </a>
+        <a routerLink="/notes"
+           [class.active]="getCurrentRoute().includes('/notes')"
+           class="nav-link">
+          📝 Alle Notizen
+        </a>
+        <button (click)="logout()" class="logout-btn">
+          🚪 Abmelden
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,34 +1,179 @@
-/* notebook.component.css */
-
-.card-grid {
-  display: grid;
-  /* Erstellt ein Grid mit Spalten, die sich an der verfügbaren Breite anpassen.
-     Die Karten haben eine Mindestbreite von 300px und es werden maximal 3 pro Reihe angezeigt. */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px; /* Abstand zwischen den Karten */
+.notes-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.notebook-card,
-.add-card {
-  /* Grund-Styling für die Karten */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #333;
+  margin: 0;
+}
+
+.back-btn {
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.search-section {
+  margin-bottom: 30px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.create-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.create-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.note-input, .note-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.note-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.create-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
   cursor: pointer;
-  height: 150px;
+  font-size: 16px;
+}
+
+.create-btn:hover {
+  background: #218838;
+}
+
+.error {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.note-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 15px;
+}
+
+.note-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+.note-content {
+  margin-bottom: 15px;
+}
+
+.note-content p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.note-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 5px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
 }
 
-.add-card {
+.note-info small {
+  color: #888;
+  font-size: 12px;
+}
+
+.empty-state {
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  border-style: dashed;
-  border-width: 2px;
-}
-
-.add-card mat-icon {
-  font-size: 48px;
-  height: 48px;
-  width: 48px;
+  color: #666;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
