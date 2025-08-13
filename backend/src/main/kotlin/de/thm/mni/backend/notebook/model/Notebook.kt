@@ -1,6 +1,7 @@
-package de.thm.mni.backend.notebook
+package de.thm.mni.backend.notebook.model
 
-import de.thm.mni.backend.note.Note
+import com.fasterxml.jackson.annotation.JsonIgnore
+import de.thm.mni.backend.note.model.Note
 import jakarta.persistence.*
 import java.util.Date
 import java.util.UUID
@@ -17,6 +18,6 @@ class Notebook(
     @OneToMany(mappedBy = "notebook", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val notes: List<Note> = emptyList(),
 
-    val user_id: String = "",
+    val userId: String = "",
     val coverImage: String = ""
 )
