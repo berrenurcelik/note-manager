@@ -37,7 +37,7 @@
 
 .notebooks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
   gap: 20px;
 }
 
@@ -105,7 +105,6 @@
   border-radius: 8px;
 }
 
-
 img {
   padding-left: 3rem;
 }
@@ -113,7 +112,7 @@ img {
 .notebook-card {
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #e0e0e0; /* Fügt einen leichten Rahmen hinzu */
+  border: 1px solid #e0e0e0;
 }
 
 .notebook-link {
@@ -158,18 +157,18 @@ img {
 }
 
 .add-icon-container {
-  width: 60px; /* Breite des Kreises */
-  height: 60px; /* Höhe des Kreises */
-  border-radius: 50%; /* Macht den Container kreisförmig */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   border: 1px solid #777777;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px; /* Abstand zum Text unten */
+  margin-bottom: 10px;
 }
 
 .add-icon {
-  font-size: 36px; /* Größe des Plus-Symbols */
+  font-size: 36px;
   width: 36px;
   height: 36px;
   color: #000;
