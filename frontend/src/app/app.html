@@ -1,65 +1,60 @@
-<header>
+<!-- Toolbar und Sidenav nur, wenn eingeloggt -->
+<ng-container *ngIf="isLoggedIn()">
   <mat-toolbar>
-    <button mat-icon-button aria-hidden="true" (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1>Note Manager</h1>
-  </mat-toolbar>
-</header>
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="app-title">Note Manager</span>
+    </div>
+    <div class="search-section" *ngIf="isOnNotesPage()">
+<!--      <input-->
+<!--        type="text"-->
+<!--        [(ngModel)]="searchTitle"-->
+<!--        placeholder="In Notiz-Titel suchen..."-->
+<!--        (keyup)="searchNotes()"-->
+<!--        class="search-input">-->
+    </div>
 
-<nav>
+  </mat-toolbar>
+
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" opened="true">
-      <div class="profile-container">
-        <div class="profile-row">
-          <div class="profile-icon">
-            <mat-icon>account_circle</mat-icon>
-          </div>
-          <div class="profile-details">
-            <div class="profile-details-row">
+      <mat-action-list>
+        <div class="profile-container">
+          <div class="profile-row">
+            <div class="profile-col">
               <div class="profile-name">
-                <div class="name">Hallo, Jasmin!</div>
-              </div>
-              <div class="profile-email">
-                <div class="email">jmsandhuweb.de</div>
+                <h3 class="name">
+                  <mat-icon>account_circle</mat-icon>
+                  Hallo, {{ username }}!
+                </h3>
               </div>
             </div>
-          </div>
-          <div class="profile-logout">
-            <button (click)="logout()">Logout</button>
+            <div class="profile-col profile-logout">
+              <button matButton color="danger" (click)="logout()">Logout</button>
+            </div>
           </div>
         </div>
-      </div>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/notebooks" [class.active]="getCurrentRoute().includes('/notebooks')" class="nav-link">
+          Alle Notizbücher
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/notes" [class.active]="getCurrentRoute().includes('/notes')" class="nav-link">
+          Alle Notizen
+        </mat-list-item>
+      </mat-action-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <router-outlet></router-outlet>
+      <main class="main-content">
+        <router-outlet></router-outlet>
+      </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</nav>
-----------------------------------------------
-<div class="app-container">
-  <header class="main-header" *ngIf="isLoggedIn()">
-    <div class="header-content">
-      <h1>📔 Note Manager</h1>
-      <nav class="main-nav">
-        <a routerLink="/notebooks"
-           [class.active]="getCurrentRoute().includes('/notebooks')"
-           class="nav-link">
-          📚 Notizbücher
-        </a>
-        <a routerLink="/notes"
-           [class.active]="getCurrentRoute().includes('/notes')"
-           class="nav-link">
-          📝 Alle Notizen
-        </a>
-        <button (click)="logout()" class="logout-btn">
-          🚪 Abmelden
-        </button>
-      </nav>
-    </div>
-  </header>
+</ng-container>
 
-  <main class="main-content">
-    <router-outlet></router-outlet>
-  </main>
-</div>
+<!-- Wenn NICHT eingeloggt, nur Router-Outlet (Login/Register-Seiten) -->
+<ng-container *ngIf="!isLoggedIn()">
+  <router-outlet></router-outlet>
+</ng-container>
