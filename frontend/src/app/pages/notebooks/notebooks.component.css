@@ -21,26 +21,6 @@
   gap: 10px;
 }
 
-.notebook-input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  min-width: 250px;
-}
-
-.create-btn {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.create-btn:hover {
-  background: #0056b3;
-}
-
 .error {
   color: #dc3545;
   background: #f8d7da;
@@ -64,10 +44,9 @@
 .notebook-card {
   background: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .notebook-card:hover {
@@ -78,22 +57,14 @@
 .notebook-header {
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  margin-bottom: 10px;
-}
-
-.notebook-header h3 {
-  margin: 0;
-  color: #333;
+  align-items: center;
+  padding: 1rem;
 }
 
 .delete-btn {
   background: #dc3545;
   color: white;
   border: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
   cursor: pointer;
   font-size: 18px;
   line-height: 1;
@@ -104,32 +75,27 @@
 }
 
 .notebook-info {
-  color: #666;
   font-size: 14px;
   margin-bottom: 15px;
+  padding: 1rem;
 }
 
 .notebook-info p {
+  color: #666;
   margin: 5px 0;
 }
 
 .notebook-actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.open-btn {
-  background: #28a745;
-  color: white;
   text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background 0.2s;
+  color: #333333;
 }
 
-.open-btn:hover {
-  background: #218838;
+.notebook-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
+
 
 .empty-state {
   text-align: center;
@@ -137,4 +103,74 @@
   padding: 40px;
   background: #f8f9fa;
   border-radius: 8px;
+}
+
+
+img {
+  padding-left: 3rem;
+}
+
+.notebook-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0; /* Fügt einen leichten Rahmen hinzu */
+}
+
+.notebook-link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.notebook-cover {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.notebook-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.notebook-text h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.notebook-text p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.notebook-card.create-new-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 251.5px;
+}
+
+.add-icon-container {
+  width: 60px; /* Breite des Kreises */
+  height: 60px; /* Höhe des Kreises */
+  border-radius: 50%; /* Macht den Container kreisförmig */
+  border: 1px solid #777777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Abstand zum Text unten */
+}
+
+.add-icon {
+  font-size: 36px; /* Größe des Plus-Symbols */
+  width: 36px;
+  height: 36px;
+  color: #000;
 }

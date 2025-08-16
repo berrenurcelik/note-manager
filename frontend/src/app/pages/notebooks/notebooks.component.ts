@@ -1,13 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, Input, OnInit} from '@angular/core';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NotebookService } from '../../services/notebook.service';
 import { Notebook } from '../../models/notebook.model';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../shared/dialog/dialog';
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
+import {CreateDialog} from "../shared/create-dialog/create-dialog"
+import {
+  MatCard
+} from '@angular/material/card';
 
 @Component({
   selector: 'app-notebooks.component',
-  imports: [CommonModule, FormsModule, RouterModule],
+  standalone: true, // hinzugefügt
+  imports: [CommonModule, FormsModule, RouterModule, MatIcon, MatIconButton, MatCard],
   templateUrl: './notebooks.component.html',
   styleUrl: './notebooks.component.css'
 })
@@ -16,11 +25,23 @@ export class NotebooksComponent implements OnInit {
   newNotebookTitle = '';
   loading = false;
   error = '';
+  @Input() image = "";
 
-  constructor(private notebookService: NotebookService) {}
+  constructor(
+    private notebookService: NotebookService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.loadNotebooks();
+    console.log('Image variable:', this.image);
+    this.notebookService.getAllNotebooks().subscribe({
+      next: (data) => {
+        this.notebooks = data;
+        console.log(this.notebooks); // Prüfen, ob die Daten ankommen
+      },
+      error: (err) => console.error('Fehler beim Laden der Notebooks:', err)
+    });
   }
 
   loadNotebooks() {
@@ -38,32 +59,42 @@ export class NotebooksComponent implements OnInit {
     });
   }
 
-  createNotebook() {
-    if (!this.newNotebookTitle.trim()) return;
+  deleteNotebook(id: string, event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'Notizbuch löschen',
+        message: 'Sind Sie sicher, dass Sie dieses Notizbuch löschen möchten?'
+      }
+    });
 
-    this.notebookService.createNotebook({ title: this.newNotebookTitle }).subscribe({
-      next: (notebook) => {
-        this.notebooks.push(notebook);
-        this.newNotebookTitle = '';
-      },
-      error: (error) => {
-        this.error = 'Fehler beim Erstellen des Notizbuchs';
-        console.error('Error creating notebook:', error);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.notebookService.deleteNotebook(id).subscribe({
+          next: () => {
+            this.notebooks = this.notebooks.filter(nb => nb.id !== id);
+          },
+          error: error => {
+            this.error = 'Fehler beim Löschen des Notizbuchs';
+            console.error('Error deleting notebook:', error);
+          }
+        });
       }
     });
   }
 
-  deleteNotebook(id: string) {
-    if (!confirm('Sind Sie sicher, dass Sie dieses Notizbuch löschen möchten?')) return;
+  openCreateDialog(): void {
+    const dialogRef = this.dialog.open(CreateDialog, {
+      width: '400px'
+    });
 
-    this.notebookService.deleteNotebook(id).subscribe({
-      next: () => {
-        this.notebooks = this.notebooks.filter(nb => nb.id !== id);
-      },
-      error: (error) => {
-        this.error = 'Fehler beim Löschen des Notizbuchs';
-        console.error('Error deleting notebook:', error);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.notebooks.push(result);
+        console.log('Dialog result:', result);
       }
     });
   }
+
 }

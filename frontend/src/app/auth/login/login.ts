@@ -22,7 +22,7 @@ export class LoginComponent {
     this.auth.login(this.username, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
-        console.log('Login successful:', { username: this.username });
+        localStorage.setItem('username', this.username);
         this.router.navigate(['/notebooks']);
       },
       error: () => {

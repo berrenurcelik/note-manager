@@ -7,18 +7,22 @@ export class Notebook {
   public createdAt: Date;
   public notes: Note[];
   public userId: string;
+  public image: string;
 
   constructor(
     id: string,
     title: string,
     createdAt: Date,
     notes: Note[] = [],
-    userId: string
-  ) {
+    userId: string,
+    image: string
+
+) {
     this.id = id;
     this.title = title;
     this.createdAt = createdAt;
     this.notes = notes;
     this.userId = userId;
+    this.image = image;
   }
 }

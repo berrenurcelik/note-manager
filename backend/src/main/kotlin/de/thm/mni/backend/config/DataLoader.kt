@@ -45,17 +45,18 @@ class DataLoader(
 
         userRepository.saveAll(listOf(user1, user2, user3))
 
-        val nb1User1 = Notebook(title = "Projektideen", createdAt = Date(), userId = user1.username)
-        val nb2User1 = Notebook(title = "Rezeptesammlung", createdAt = Date(), userId = user1.username)
-        val nb3User1 = Notebook(title = "Reiseplanung 2025", createdAt = Date(), userId = user1.username)
+        // Notebooks mit Beispielbildern
+        val nb1User1 = Notebook(title = "Projektideen", createdAt = Date(), userId = user1.username, image = "assets/cover1.png")
+        val nb2User1 = Notebook(title = "Rezeptesammlung", createdAt = Date(), userId = user1.username, image = "assets/cover2.png")
+        val nb3User1 = Notebook(title = "Reiseplanung 2025", createdAt = Date(), userId = user1.username, image = "assets/cover3.png")
 
-        val nb1User2 = Notebook(title = "Work Notes", createdAt = Date(), userId = user2.username)
-        val nb2User2 = Notebook(title = "Hobby Projekte", createdAt = Date(), userId = user2.username)
-        val nb3User2 = Notebook(title = "Fitnessplan", createdAt = Date(), userId = user2.username)
+        val nb1User2 = Notebook(title = "Work Notes", createdAt = Date(), userId = user2.username, image = "assets/cover4.png")
+        val nb2User2 = Notebook(title = "Hobby Projekte", createdAt = Date(), userId = user2.username, image = "assets/cover1.png")
+        val nb3User2 = Notebook(title = "Fitnessplan", createdAt = Date(), userId = user2.username, image = "assets/cover2.png")
 
-        val nb1User3 = Notebook(title = "Meeting Notizen", createdAt = Date(), userId = user3.username)
-        val nb2User3 = Notebook(title = "Rezeptideen", createdAt = Date(), userId = user3.username)
-        val nb3User3 = Notebook(title = "Urlaubsplanung", createdAt = Date(), userId = user3.username)
+        val nb1User3 = Notebook(title = "Meeting Notizen", createdAt = Date(), userId = user3.username, image = "assets/cover3.png")
+        val nb2User3 = Notebook(title = "Rezeptideen", createdAt = Date(), userId = user3.username, image = "assets/cover4.png")
+        val nb3User3 = Notebook(title = "Urlaubsplanung", createdAt = Date(), userId = user3.username, image = "assets/cover1.png")
 
         val notebooks = listOf(
             nb1User1, nb2User1, nb3User1,
