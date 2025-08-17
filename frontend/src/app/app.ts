@@ -1,4 +1,4 @@
-import {Component, signal, ViewChild} from '@angular/core';
+import {Component, signal, ViewChild, OnInit} from '@angular/core';
 import { Router, RouterOutlet, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {MatToolbar} from '@angular/material/toolbar';
@@ -6,27 +6,43 @@ import {MatSidenav, MatSidenavContainer, MatSidenavContent} from '@angular/mater
 import {MatIcon} from '@angular/material/icon';
 import {MatActionList, MatDivider, MatListItem} from '@angular/material/list';
 import {MatButton, MatIconButton} from '@angular/material/button';
-import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterModule, MatToolbar, MatIcon, MatSidenavContainer, MatSidenav, MatSidenavContent, MatListItem, MatActionList, MatIconButton, MatButton, MatDivider, MatFormField, MatLabel, MatInput, FlexLayoutModule, FormsModule],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    RouterModule,
+    MatToolbar,
+    MatIcon,
+    MatSidenavContainer,
+    MatSidenav,
+    MatSidenavContent,
+    MatListItem,
+    MatActionList,
+    MatIconButton,
+    MatButton,
+    MatDivider,
+    FlexLayoutModule,
+    FormsModule
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-
-export class App {
+export class App implements OnInit {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   protected readonly title = signal('Note Manager');
-  username: string | null = null;
+  username = signal<string>('');
 
-  constructor(
-    private router: Router) {
-    this.username = this.capitalizeFirstLetter(localStorage.getItem('username') || '');
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const storedUser = localStorage.getItem('username') || '';
+    this.username.set(this.capitalizeFirstLetter(storedUser));
   }
 
   isLoggedIn(): boolean {
@@ -36,6 +52,7 @@ export class App {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
+    this.username.set('');
     this.router.navigate(['/login']);
   }
 

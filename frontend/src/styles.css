@@ -1,9 +1,0 @@
-.mat-toolbar {
-  background-color: var(--mat-sys-outline) !important;
-  color: var(--mat-sys-on-primary) !important;
-}
-
-.mat-sidenav {
-  background-color: var(--mat-sys-surface-container) !important;
-  color: var(--mat-sys-on-surface-container) !important;
-}

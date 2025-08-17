@@ -1,34 +1,12 @@
 <div class="notebooks-container">
   <div class="header">
     <h1>Meine Notizbücher</h1>
-<!--    <button mat-stroked-button color="primary" (click)="openCreateDialog()">-->
-<!--      Neues Notizbuch anlegen-->
-<!--      <mat-icon>add</mat-icon>-->
-<!--    </button>-->
   </div>
 
   <div *ngIf="error" class="error">{{ error }}</div>
   <div *ngIf="loading" class="loading">Wird geladen...</div>
 
   <div class="notebooks-grid">
-<!--    <mat-card *ngFor="let notebook of notebooks" class="notebook-card">-->
-<!--        <a [routerLink]="['/notes', notebook.id]" class="notebook-actions">-->
-<!--          <mat-card-header class="notebook-header">-->
-<!--            <mat-card-title>{{ notebook.title }}</mat-card-title>-->
-<!--            <button mat-icon-button (click)="deleteNotebook(notebook.id, $event)" class="delete-btn">-->
-<!--              <mat-icon>delete</mat-icon>-->
-<!--            </button>-->
-<!--          </mat-card-header>-->
-<!--            <img mat-card-image src="assets/cover3.png" alt="Notebook-Cover" height="640" width="490">-->
-<!--            <mat-card-footer class="notebook-footer">-->
-<!--                <div class="notebook-info">-->
-<!--                  <p>{{ (notebook.notes?.length || 0) }} Notizen</p>-->
-<!--                  <p>{{ notebook.createdAt | date:'short' }}</p>-->
-<!--                </div>-->
-<!--            </mat-card-footer>-->
-<!--        </a>-->
-<!--    </mat-card>-->
-
     <div>
       <mat-card class="notebook-card create-new-card" (click)="openCreateDialog()">
         <div class="add-icon-container">
@@ -39,7 +17,6 @@
         <h3>Neues Notizbuch</h3>
       </div>
     </div>
-
 
     <div *ngFor="let notebook of notebooks">
     <mat-card class="notebook-card">
@@ -52,13 +29,11 @@
         <h3>{{ notebook.title }}</h3>
         <p>{{ notebook.createdAt | date: 'dd.MM.yyyy' }}</p>
       </div>
-      <button mat-icon-button (click)="deleteNotebook(notebook.id, $event)" class="delete-btn">
-        <mat-icon>delete</mat-icon>
+      <button mat-icon-button color="primary" (click)="editNotebook(notebook, $event)">
+        <mat-icon>edit</mat-icon>
       </button>
     </div>
   </div>
-
-
 
   <div *ngIf="notebooks.length === 0 && !loading" class="empty-state">
     <p>Sie haben noch keine Notizbücher. Erstellen Sie oben ein neues Notizbuch!</p>

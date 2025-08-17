@@ -61,6 +61,13 @@
 
 .image-grid {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
 }
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 24px;
+}
+

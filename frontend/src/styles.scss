@@ -12,7 +12,7 @@ html {
       primary: mat.$azure-palette,
       tertiary: mat.$blue-palette,
     ),
-    typography: Roboto,
+    typography: Gloock,
     density: 0,
   ));
 }
@@ -28,8 +28,7 @@ body {
   // variables at https://material.angular.dev/guide/system-variables
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
+  font: var(--mat-sys-body-large);
 
-  // Reset the user agent margin.
   margin: 0;
 }

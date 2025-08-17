@@ -1,6 +1,5 @@
-<!-- Toolbar und Sidenav nur, wenn eingeloggt -->
 <ng-container *ngIf="isLoggedIn()">
-  <mat-toolbar>
+  <mat-toolbar color="primary">
     <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
@@ -27,7 +26,7 @@
               <div class="profile-name">
                 <h3 class="name">
                   <mat-icon>account_circle</mat-icon>
-                  Hallo, {{ username }}!
+                  Hallo, {{ username() }}!
                 </h3>
               </div>
             </div>
@@ -54,7 +53,6 @@
   </mat-sidenav-container>
 </ng-container>
 
-<!-- Wenn NICHT eingeloggt, nur Router-Outlet (Login/Register-Seiten) -->
 <ng-container *ngIf="!isLoggedIn()">
   <router-outlet></router-outlet>
 </ng-container>
