@@ -11,7 +11,7 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
+import {MatFormField, MatHint, MatLabel} from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import {MatButton, MatIconButton} from '@angular/material/button';
 import { Notebook } from '../../../models/notebook.model';
@@ -34,6 +34,7 @@ import {MatIcon} from '@angular/material/icon';
     MatDialogTitle,
     MatIconButton,
     MatIcon,
+    MatHint,
   ],
   templateUrl: './create-dialog.html',
   styleUrls: ['./create-dialog.css']

@@ -14,7 +14,9 @@
                type="text"
                [(ngModel)]="newNotebookTitle"
                (keyup.enter)="saveNotebook()"
-               class="notebook-input">
+               class="notebook-input"
+               maxlength="50">
+              <mat-hint align="end">{{ newNotebookTitle.length }} / 50</mat-hint>
       </mat-form-field>
 
       <button class="selected-image-btn" (click)="toggleImagePicker()">
