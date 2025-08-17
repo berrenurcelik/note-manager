@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../shared/dialog/dialog';
 import { MatIconButton } from "@angular/material/button";
 import { MatIcon } from "@angular/material/icon";
-import { CreateDialog } from "../shared/create-dialog/create-dialog";
+import { CreateNotebookDialog } from "../shared/create-notebook-dialog/create-notebook-dialog";
 import { MatCard } from '@angular/material/card';
 
 @Component({
@@ -56,8 +56,8 @@ export class NotebooksComponent implements OnInit {
     });
   }
 
-  openCreateDialog(notebook?: Notebook) {
-    const dialogRef = this.dialog.open(CreateDialog, {
+  openCreateNotebookDialog(notebook?: Notebook) {
+    const dialogRef = this.dialog.open(CreateNotebookDialog, {
       width: '400px',
       data: notebook || null
     });
@@ -82,7 +82,7 @@ export class NotebooksComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
 
-    const dialogRef = this.dialog.open(CreateDialog, {
+    const dialogRef = this.dialog.open(CreateNotebookDialog, {
       width: '400px',
       data: notebook
     });

@@ -36,10 +36,10 @@ import {MatIcon} from '@angular/material/icon';
     MatIcon,
     MatHint,
   ],
-  templateUrl: './create-dialog.html',
-  styleUrls: ['./create-dialog.css']
+  templateUrl: './create-notebook-dialog.html',
+  styleUrls: ['./create-notebook-dialog.css']
 })
-export class CreateDialog {
+export class CreateNotebookDialog {
   newNotebookTitle: string = "";
   error = '';
 
@@ -54,7 +54,7 @@ export class CreateDialog {
 
   constructor(
     protected notebookService: NotebookService,
-    private dialogRef: MatDialogRef<CreateDialog>,
+    private dialogRef: MatDialogRef<CreateNotebookDialog>,
     private dialog: MatDialog,               // <-- hier MatDialog injizieren
     @Inject(MAT_DIALOG_DATA) public data?: Notebook
   ) {}
@@ -132,5 +132,4 @@ export class CreateDialog {
   close(): void {
     this.dialogRef.close();
   }
-
 }
