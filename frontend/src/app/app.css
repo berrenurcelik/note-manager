@@ -1,16 +1,42 @@
+.toolbar{
+  background-color: #E4C9AE;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.sidenav {
+  background-color: #FFF8F1;
+}
+.sidenav-container {
+  background-color: white;
+}
+
+.profile-container {
+  background-color: #F9EDE1;
+}
+
+.mat-action-list {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-icon {
+  color: white;
+}
+
+
 .profile-name .name {
   display: flex;
-  align-items: center; /* vertikal zentrieren */
-  gap: 0.5rem; /* Abstand zwischen Icon und Text */
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .app-container {
   min-height: 100vh;
-  background: #f8f9fa;
 }
 
 .main-header {
-  background: white;
   border-bottom: 1px solid #dee2e6;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -33,7 +59,6 @@
 
 .main-content {
   min-height: calc(100vh - 80px);
-  padding-top: 20px;
 }
 
 .row {
@@ -43,7 +68,8 @@
 
 .profile-row {
   display: flex;
-  justify-content: space-between; /* Name links, Logout rechts */
-  align-items: center; /* vertikal zentrieren */
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

@@ -1,64 +1,42 @@
-<div class="card-grid">
-  <mat-card *ngFor="let note of notes" class="notebook-card">
-    <mat-card-header>
-      <mat-card-title>{{ note.title }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p class="date">{{ note.createdAt }}</p>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card class="add-card">
-    <button mat-icon-button>
-      <mat-icon>add</mat-icon>
-    </button>
-    <p>Neue Notiz erstellen</p>
-  </mat-card>
-</div>
 <div class="notes-container">
   <div class="header">
-    <h1>Meine Notizen</h1>
-    <a routerLink="/notebooks" class="back-btn">← Zurück zu Notizbüchern</a>
-  </div>
-
-  <div class="search-section">
-    <input
-      type="text"
-      [(ngModel)]="searchTitle"
-      placeholder="In Notiz-Titel suchen..."
-      (keyup)="searchNotes()"
-      class="search-input">
-  </div>
-
-  <div class="create-section">
-    <h3>Neue Notiz</h3>
-    <input
-      type="text"
-      [(ngModel)]="newNoteTitle"
-      placeholder="Notiz-Titel..."
-      class="note-input">
-    <textarea
-      [(ngModel)]="newNoteContent"
-      placeholder="Notiz-Inhalt..."
-      rows="4"
-      class="note-textarea"></textarea>
-    <button (click)="createNote()" class="create-btn">Notiz erstellen</button>
+    <h1>{{ notebookTitle }}</h1>
+      <div>
+        <mat-form-field appearance="outline" class="search-input">
+          <mat-label>In Notizen suchen</mat-label>
+          <input matInput
+                 type="text"
+                 [(ngModel)]="searchTitle"
+                 (keyup)="searchNotes()"
+                 class="search-input">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <!--    <a routerLink="/notebooks" class="back-btn">← Zurück zu Notizbüchern</a>-->
   </div>
 
   <div *ngIf="error" class="error">{{ error }}</div>
   <div *ngIf="loading" class="loading">Wird geladen...</div>
 
   <div class="notes-grid">
+    <div class="create-note-card" (click)="openNoteDialog()">
+    <h3 class="note-header">Neue Notiz anlegen</h3>
+    <div class="note-content add-icon-container">
+      <mat-icon class="add-icon">add</mat-icon>
+    </div>
+  </div>
     <div *ngFor="let note of filteredNotes" class="note-card">
       <div class="note-header">
         <h3>{{ note.title }}</h3>
-        <button (click)="deleteNote(note.id)" class="delete-btn">×</button>
+        <button matIconButton (click)="openNoteDialog(note)">
+          <mat-icon>edit</mat-icon>
+        </button>
       </div>
       <div class="note-content">
         <p>{{ note.content }}</p>
       </div>
       <div class="note-info">
-        <small>Erstellt: {{ note.createdAt | date:'short' }}</small>
+        <small>Erstellt: {{ note.createdAt | date:'dd.MM.yyyy HH:mm' }}</small>
         <small *ngIf="note.modifiedAt !== note.createdAt">
           Bearbeitet: {{ note.modifiedAt | date:'short' }}
         </small>
@@ -71,4 +49,3 @@
     <p *ngIf="!searchTitle">Sie haben noch keine Notizen. Erstellen Sie oben eine neue Notiz!</p>
   </div>
 </div>
-----------------------------------------------

@@ -8,7 +8,7 @@
 
   <div class="notebooks-grid">
     <div>
-      <mat-card class="notebook-card create-new-card" (click)="openCreateNotebookDialog()">
+      <mat-card class="notebook-card create-new-card" (click)="openNotebookDialog()">
         <div class="add-icon-container">
           <mat-icon class="add-icon">add</mat-icon>
         </div>
@@ -29,7 +29,7 @@
         <h3>{{ notebook.title }}</h3>
         <p>{{ notebook.createdAt | date: 'dd.MM.yyyy' }}</p>
       </div>
-      <button mat-icon-button color="primary" (click)="editNotebook(notebook, $event)">
+      <button mat-icon-button color="primary" (click)="openNotebookDialog(notebook)">
         <mat-icon>edit</mat-icon>
       </button>
     </div>

@@ -1,25 +1,16 @@
 <ng-container *ngIf="isLoggedIn()">
-  <mat-toolbar color="primary">
+  <mat-toolbar class="toolbar">
     <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
       <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
+        <mat-icon class="menu-icon">menu</mat-icon>
       </button>
       <span class="app-title">Note Manager</span>
     </div>
-    <div class="search-section" *ngIf="isOnNotesPage()">
-<!--      <input-->
-<!--        type="text"-->
-<!--        [(ngModel)]="searchTitle"-->
-<!--        placeholder="In Notiz-Titel suchen..."-->
-<!--        (keyup)="searchNotes()"-->
-<!--        class="search-input">-->
-    </div>
-
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" opened="true">
-      <mat-action-list>
+    <mat-sidenav #sidenav mode="side" opened="false" class="sidenav">
+      <mat-action-list class="mat-action-list">
         <div class="profile-container">
           <div class="profile-row">
             <div class="profile-col">
@@ -31,7 +22,7 @@
               </div>
             </div>
             <div class="profile-col profile-logout">
-              <button matButton color="danger" (click)="logout()">Logout</button>
+              <button matButton="outlined" (click)="logout()">Logout</button>
             </div>
           </div>
         </div>

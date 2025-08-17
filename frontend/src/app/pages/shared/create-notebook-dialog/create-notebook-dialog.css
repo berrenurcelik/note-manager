@@ -71,3 +71,16 @@
   padding-right: 24px;
 }
 
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+

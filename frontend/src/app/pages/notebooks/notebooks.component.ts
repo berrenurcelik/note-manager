@@ -5,96 +5,74 @@ import { RouterModule } from '@angular/router';
 import { NotebookService } from '../../services/notebook.service';
 import { Notebook } from '../../models/notebook.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from '../shared/dialog/dialog';
-import { MatIconButton } from "@angular/material/button";
-import { MatIcon } from "@angular/material/icon";
-import { CreateNotebookDialog } from "../shared/create-notebook-dialog/create-notebook-dialog";
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { CreateNotebookDialog } from '../shared/create-notebook-dialog/create-notebook-dialog';
 import { MatCard } from '@angular/material/card';
 
 @Component({
   selector: 'app-notebooks',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    MatIcon,
-    MatIconButton,
-    MatCard
-  ],
+  imports: [CommonModule, FormsModule, RouterModule, MatIcon, MatIconButton, MatCard],
   templateUrl: './notebooks.component.html',
-  styleUrl: './notebooks.component.css'
+  styleUrls: ['./notebooks.component.css'],
 })
 export class NotebooksComponent implements OnInit {
   notebooks: Notebook[] = [];
   loading = false;
   error = '';
-  @Input() image = "";
+  @Input() image = '';
 
-  constructor(
-    private notebookService: NotebookService,
-    private dialog: MatDialog
-  ) {
-  }
+  constructor(private notebookService: NotebookService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.loadNotebooks();
   }
 
-  loadNotebooks() {
+  private loadNotebooks() {
     this.loading = true;
     this.notebookService.getAllNotebooks().subscribe({
       next: (notebooks) => {
         this.notebooks = notebooks;
         this.loading = false;
       },
-      error: (error) => {
+      error: (err) => {
         this.error = 'Fehler beim Laden der Notizbücher';
         this.loading = false;
-        console.error('Error loading notebooks:', error);
-      }
+        console.error(err);
+      },
     });
   }
 
-  openCreateNotebookDialog(notebook?: Notebook) {
+  openNotebookDialog(notebook?: Notebook) {
     const dialogRef = this.dialog.open(CreateNotebookDialog, {
       width: '400px',
-      data: notebook || null
+      data: notebook || null,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (!result) return;
 
       if (result.deleted) {
-        this.notebooks = this.notebooks.filter(nb => nb.id !== result.id);
+        this.handleDelete(result.id);
       } else if (notebook) {
-        // Bearbeitetes Notebook ersetzen
-        const index = this.notebooks.findIndex(nb => nb.id === result.id);
-        if (index > -1) this.notebooks[index] = result;
+        this.handleUpdate(result);
       } else {
-        // Neues Notebook hinzufügen
-        this.notebooks.push(result);
+        this.handleCreate(result);
       }
     });
   }
 
-  editNotebook(notebook: Notebook, event: Event): void {
-    event.preventDefault();
-    event.stopPropagation();
+  private handleDelete(id: string) {
+    this.notebooks = this.notebooks.filter((nb) => nb.id !== id);
+  }
 
-    const dialogRef = this.dialog.open(CreateNotebookDialog, {
-      width: '400px',
-      data: notebook
-    });
+  private handleUpdate(updatedNotebook: Notebook) {
+    const index = this.notebooks.findIndex((nb) => nb.id === updatedNotebook.id);
+    if (index > -1) this.notebooks[index] = updatedNotebook;
+  }
 
-    dialogRef.afterClosed().subscribe(updated => {
-      if (updated) {
-        const idx = this.notebooks.findIndex(n => n.id === updated.id);
-        if (idx > -1) {
-          this.notebooks[idx] = updated;
-        }
-        console.log('Notizbuch aktualisiert:', updated);
-      }
-    });
+  private handleCreate(newNotebook: Notebook) {
+    this.notebooks.push(newNotebook);
   }
 }

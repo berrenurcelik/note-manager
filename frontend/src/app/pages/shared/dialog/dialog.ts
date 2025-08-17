@@ -16,14 +16,9 @@ import {MatButton} from '@angular/material/button';
     MatDialogActions,
     MatButton
   ],
-  template: `
-    <h2 mat-dialog-title>{{ data.title }}</h2>
-    <mat-dialog-content>{{ data.message }}</mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button mat-button (click)="onCancel()">Abbrechen</button>
-      <button mat-button color="warn" (click)="onConfirm()">Löschen</button>
-    </mat-dialog-actions>
-  `
+  templateUrl: '/dialog.html',
+  styleUrls: ['./dialog.css']
+
 })
 export class ConfirmDialogComponent {
   constructor(

@@ -1,6 +1,6 @@
 <div class="title-row">
   <h2 mat-dialog-title >{{ data ? 'Notizbuch bearbeiten' : 'Neues Notizbuch anlegen' }}</h2>
-  <button mat-icon-button *ngIf="data" color="warn" (click)="deleteNotebook()">
+  <button mat-icon-button *ngIf="data" color="warn" class="delete-btn" (click)="deleteNotebook()">
     <mat-icon>delete</mat-icon>
   </button>
 </div>

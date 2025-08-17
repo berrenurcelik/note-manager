@@ -39,6 +39,7 @@ import {MatIcon} from '@angular/material/icon';
   templateUrl: './create-notebook-dialog.html',
   styleUrls: ['./create-notebook-dialog.css']
 })
+
 export class CreateNotebookDialog {
   newNotebookTitle: string = "";
   error = '';

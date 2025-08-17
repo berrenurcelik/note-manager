@@ -1,13 +1,14 @@
-import {Component, signal, ViewChild, OnInit} from '@angular/core';
-import { Router, RouterOutlet, RouterModule } from '@angular/router';
+import { Component, signal, ViewChild, OnInit } from '@angular/core';
+import { Router, RouterOutlet, RouterModule, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
-import {MatToolbar} from '@angular/material/toolbar';
-import {MatSidenav, MatSidenavContainer, MatSidenavContent} from '@angular/material/sidenav';
-import {MatIcon} from '@angular/material/icon';
-import {MatActionList, MatDivider, MatListItem} from '@angular/material/list';
-import {MatButton, MatIconButton} from '@angular/material/button';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
+import { MatIcon } from '@angular/material/icon';
+import { MatActionList, MatDivider, MatListItem } from '@angular/material/list';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,18 @@ export class App implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    // Username einmal initial laden
+    this.loadUsername();
+
+    // Bei jedem Router-Wechsel Username neu laden
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.loadUsername();
+      });
+  }
+
+  private loadUsername() {
     const storedUser = localStorage.getItem('username') || '';
     this.username.set(this.capitalizeFirstLetter(storedUser));
   }

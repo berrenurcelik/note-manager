@@ -36,7 +36,7 @@ export class NoteService {
     return this.http.post<Note>(this.apiUrl, note, { headers: this.getHeaders() });
   }
 
-  updateNote(id: string, note: { title: string; content: string; notebookId?: string }): Observable<Note> {
+  updateNote(id: string, note: { title: string; content: string; notebookId?: string | null }): Observable<Note> {
     return this.http.put<Note>(`${this.apiUrl}/${id}`, note, { headers: this.getHeaders() });
   }
 

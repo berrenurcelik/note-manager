@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {Dialog} from '@angular/cdk/dialog';
+import { CreateNoteDialog } from './create-note-dialog';
 
-describe('Dialog', () => {
-  let component: Dialog;
-  let fixture: ComponentFixture<Dialog>;
+describe('CreateNoteDialog', () => {
+  let component: CreateNoteDialog;
+  let fixture: ComponentFixture<CreateNoteDialog>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Dialog]
+      imports: [CreateNoteDialog]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Dialog);
+    fixture = TestBed.createComponent(CreateNoteDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
