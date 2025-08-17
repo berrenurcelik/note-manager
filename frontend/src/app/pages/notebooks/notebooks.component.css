@@ -134,11 +134,15 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  flex-wrap: wrap;
 }
 
 .notebook-text h3 {
   margin: 0;
   font-size: 1rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-word; /
 }
 
 .notebook-text p {
