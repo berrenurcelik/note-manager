@@ -1,37 +1,42 @@
 <div class="notebooks-container">
   <div class="header">
     <h1>Meine Notizbücher</h1>
-    <div class="create-form">
-      <input 
-        type="text" 
-        [(ngModel)]="newNotebookTitle" 
-        placeholder="Neuer Notizbuch-Name..."
-        (keyup.enter)="createNotebook()"
-        class="notebook-input">
-      <button (click)="createNotebook()" class="create-btn">Erstellen</button>
-    </div>
   </div>
 
   <div *ngIf="error" class="error">{{ error }}</div>
   <div *ngIf="loading" class="loading">Wird geladen...</div>
 
   <div class="notebooks-grid">
-    <div *ngFor="let notebook of notebooks" class="notebook-card">
-      <div class="notebook-header">
+    <div>
+      <mat-card class="notebook-card create-new-card" (click)="openNotebookDialog()">
+        <div class="add-icon-container">
+          <mat-icon class="add-icon">add</mat-icon>
+        </div>
+      </mat-card>
+      <div class="notebook-text notebook-details">
+        <h3>Neues Notizbuch</h3>
+      </div>
+    </div>
+
+    <div *ngFor="let notebook of notebooks">
+    <mat-card class="notebook-card">
+      <a [routerLink]="['/notes', notebook.id]" class="notebook-link">
+        <img [src]="notebook.image" alt="Notebook Cover" class="notebook-cover">
+      </a>
+    </mat-card>
+    <div class="notebook-details">
+      <div class="notebook-text">
         <h3>{{ notebook.title }}</h3>
-        <button (click)="deleteNotebook(notebook.id)" class="delete-btn">×</button>
+        <p>{{ notebook.createdAt | date: 'dd.MM.yyyy' }}</p>
       </div>
-      <div class="notebook-info">
-        <p>{{ (notebook.notes?.length || 0) }} Notizen</p>
-        <p>{{ notebook.createdAt | date:'short' }}</p>
-      </div>
-      <div class="notebook-actions">
-        <a [routerLink]="['/notes', notebook.id]" class="open-btn">Öffnen</a>
-      </div>
+      <button mat-icon-button color="primary" (click)="openNotebookDialog(notebook)">
+        <mat-icon>edit</mat-icon>
+      </button>
     </div>
   </div>
 
   <div *ngIf="notebooks.length === 0 && !loading" class="empty-state">
     <p>Sie haben noch keine Notizbücher. Erstellen Sie oben ein neues Notizbuch!</p>
+  </div>
   </div>
 </div>

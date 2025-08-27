@@ -1,0 +1,28 @@
+<div class="title-row">
+  <h2 mat-dialog-title>{{ data ? 'Notiz bearbeiten' : 'Neue Notiz anlegen' }}</h2>
+  <button mat-icon-button *ngIf="data" color="warn" (click)="deleteNote()" class="delete-btn">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label>Titel</mat-label>
+    <input matInput [(ngModel)]="title" maxlength="50">
+    <mat-hint align="end">{{ title.length }} / 50</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Inhalt</mat-label>
+    <textarea matInput [(ngModel)]="content" rows="5"></textarea>
+  </mat-form-field>
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Abbrechen</button>
+  <button mat-raised-button color="primary" (click)="save()">
+    {{ data ? 'Aktualisieren' : 'Speichern' }}
+  </button>
+</mat-dialog-actions>

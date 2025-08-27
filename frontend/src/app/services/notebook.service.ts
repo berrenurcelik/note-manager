@@ -27,11 +27,11 @@ export class NotebookService {
     return this.http.get<Notebook>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
 
-  createNotebook(notebook: { title: string }): Observable<Notebook> {
+  createNotebook(notebook: { title: string, image: string }): Observable<Notebook> {
     return this.http.post<Notebook>(this.apiUrl, notebook, { headers: this.getHeaders() });
   }
 
-  updateNotebook(id: string, notebook: { title: string }): Observable<Notebook> {
+  updateNotebook(id: string, notebook: { title: string, image: string }): Observable<Notebook> {
     return this.http.put<Notebook>(`${this.apiUrl}/${id}`, notebook, { headers: this.getHeaders() });
   }
 

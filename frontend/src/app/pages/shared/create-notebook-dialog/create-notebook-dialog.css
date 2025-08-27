@@ -1,0 +1,86 @@
+
+.input-with-button {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+
+.input-with-button .title-input {
+  flex: 1;
+}
+
+.selected-image-btn {
+  display: inline-flex;
+  align-items: start;
+  justify-content: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
+  width: 57px;
+  height: 57px;
+  padding: 0;
+  margin-left: 8px;
+  box-sizing: border-box;
+}
+
+.selected-image-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.image-picker {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  border: 1px solid #eee;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #fafafa;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.image-picker img {
+  width: 53px;
+  height: 53px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.image-picker img.selected {
+  border-color: #3f51b5;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 24px;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+

@@ -1,0 +1,43 @@
+<div class="title-row">
+  <h2 mat-dialog-title >{{ data ? 'Notizbuch bearbeiten' : 'Neues Notizbuch anlegen' }}</h2>
+  <button mat-icon-button *ngIf="data" color="warn" class="delete-btn" (click)="deleteNotebook()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content>
+  <div class="create-form">
+    <div class="input-with-button">
+      <mat-form-field class="title-input">
+        <mat-label>Neuer Notizbuch-Name</mat-label>
+        <input matInput
+               type="text"
+               [(ngModel)]="newNotebookTitle"
+               (keyup.enter)="saveNotebook()"
+               class="notebook-input"
+               maxlength="50">
+              <mat-hint align="end">{{ newNotebookTitle.length }} / 50</mat-hint>
+      </mat-form-field>
+
+      <button class="selected-image-btn" (click)="toggleImagePicker()">
+        <img [src]="selectedImage" alt="Ausgewähltes Bild" />
+      </button>
+    </div>
+
+    <div class="image-picker" *ngIf="showImagePicker">
+      <img *ngFor="let img of image"
+           [src]="img"
+           [class.selected]="img === selectedImage"
+           (click)="selectImage(img)" />
+    </div>
+  </div>
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Abbrechen</button>
+  <button mat-raised-button color="primary" (click)="saveNotebook()">
+    {{ data ? 'Aktualisieren' : 'Speichern' }}
+  </button>
+</mat-dialog-actions>

@@ -34,6 +34,7 @@ class NotebookApi(private val notebookRepository: NotebookRepository) {
         val userId = authentication.name
         val notebook = Notebook(
             title = notebookRequest.title,
+            image = notebookRequest.image,
             userId = userId
         )
         val savedNotebook = notebookRepository.save(notebook)
@@ -47,6 +48,7 @@ class NotebookApi(private val notebookRepository: NotebookRepository) {
             val updatedNotebook = Notebook(
                 id = id,
                 title = notebookRequest.title,
+                image = notebookRequest.image,
                 userId = existingNotebook.get().userId
             )
             val savedNotebook = notebookRepository.save(updatedNotebook)
@@ -68,9 +70,11 @@ class NotebookApi(private val notebookRepository: NotebookRepository) {
 }
 
 data class CreateNotebookRequest(
-    val title: String
+    val title: String,
+    val image: String
 )
 
 data class UpdateNotebookRequest(
-    val title: String
+    val title: String,
+    val image: String
 )

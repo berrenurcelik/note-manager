@@ -1,26 +1,49 @@
-<div class="app-container">
-  <header class="main-header" *ngIf="isLoggedIn()">
-    <div class="header-content">
-      <h1>📔 Note Manager</h1>
-      <nav class="main-nav">
-        <a routerLink="/notebooks" 
-           [class.active]="getCurrentRoute().includes('/notebooks')"
-           class="nav-link">
-          📚 Notizbücher
-        </a>
-        <a routerLink="/notes" 
-           [class.active]="getCurrentRoute().includes('/notes')"
-           class="nav-link">
-          📝 Alle Notizen
-        </a>
-        <button (click)="logout()" class="logout-btn">
-          🚪 Abmelden
-        </button>
-      </nav>
+<ng-container *ngIf="isLoggedIn()">
+  <mat-toolbar class="toolbar">
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="menu-icon">menu</mat-icon>
+      </button>
+      <span class="app-title">Note Manager</span>
     </div>
-  </header>
+  </mat-toolbar>
 
-  <main class="main-content">
-    <router-outlet></router-outlet>
-  </main>
-</div>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened="false" class="sidenav">
+      <mat-action-list class="mat-action-list">
+        <div class="profile-container">
+          <div class="profile-row">
+            <div class="profile-col">
+              <div class="profile-name">
+                <h3 class="name">
+                  <mat-icon>account_circle</mat-icon>
+                  Hallo, {{ username() }}!
+                </h3>
+              </div>
+            </div>
+            <div class="profile-col profile-logout">
+              <button matButton="outlined" (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/notebooks" [class.active]="getCurrentRoute().includes('/notebooks')" class="nav-link">
+          Alle Notizbücher
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/notes" [class.active]="getCurrentRoute().includes('/notes')" class="nav-link">
+          Alle Notizen
+        </mat-list-item>
+      </mat-action-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main class="main-content">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
+
+<ng-container *ngIf="!isLoggedIn()">
+  <router-outlet></router-outlet>
+</ng-container>

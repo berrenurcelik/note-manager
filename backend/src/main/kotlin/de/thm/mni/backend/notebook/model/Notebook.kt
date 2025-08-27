@@ -19,5 +19,5 @@ class Notebook(
     val notes: List<Note> = emptyList(),
 
     val userId: String = "",
-    val coverImage: String = ""
+    val image: String = ""
 )
