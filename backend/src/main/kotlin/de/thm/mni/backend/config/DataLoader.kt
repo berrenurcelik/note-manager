@@ -10,6 +10,17 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 import java.util.Date
 
+/**
+ * Ein Datenlader, der beim Start der Anwendung Beispieldaten in die Datenbank lädt.
+ *
+ * Diese Komponente implementiert [CommandLineRunner] und wird ausgeführt, sobald die
+ * Spring-Anwendung gestartet ist. Sie ist ideal für die Initialisierung einer
+ * In-Memory-Datenbank für Entwicklungs- oder Testzwecke.
+ *
+ * @param userRepository Das Repository für den Zugriff auf Benutzerdaten.
+ * @param notebookRepository Das Repository für den Zugriff auf Notizbuchdaten.
+ * @param noteRepository Das Repository für den Zugriff auf Notizdaten.
+ */
 @Component
 class DataLoader(
     private val userRepository: UserRepository,
@@ -17,6 +28,15 @@ class DataLoader(
     private val noteRepository: NoteRepository
 ) : CommandLineRunner {
 
+    /**
+     * Die Hauptmethode des Datenladers, die beim Start der Anwendung ausgeführt wird.
+     *
+     * In dieser Methode werden beispielhafte [User]s, [Notebook]s und [Note]s erstellt
+     * und in die entsprechenden Repositories gespeichert. Dies gewährleistet, dass die
+     * Anwendung sofort mit Testdaten verwendet werden kann.
+     *
+     * @param args Kommandozeilenargumente, die an die Anwendung übergeben wurden.
+     */
     override fun run(vararg args: String?) {
         // Always load sample data for in-memory database
         val user1 = User(
