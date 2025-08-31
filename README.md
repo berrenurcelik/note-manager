@@ -126,4 +126,65 @@ The backend provides RESTful APIs for:
    - The H2 database is in-memory and resets on restart
    - Sample data is automatically loaded on startup
 
+## Documentation Generation
+
+This project includes documentation for both frontend and backend components.
+
+### Frontend Documentation (TypeDoc)
+
+The frontend uses TypeDoc to generate documentation from TypeScript code and JSDoc comments.
+
+#### Generate Frontend Documentation:
+```bash
+cd frontend
+npm run docs
+```
+
+The documentation will be generated in `frontend/docs/` directory and can be viewed by opening `frontend/docs/index.html` in a web browser.
+
+#### View Generated Documentation:
+```bash
+cd frontend
+npm run docs:serve
+```
+This will start a local server to view the documentation at `http://localhost:8080`.
+
+### Backend Documentation (Dokka)
+
+The backend uses Dokka to generate documentation from Kotlin code and KDoc comments.
+
+#### Generate Backend Documentation:
+```bash
+cd backend
+./gradlew dokkaHtml
+```
+
+The documentation will be generated in `backend/build/docs/kdoc/` directory and can be viewed by opening `backend/build/docs/kdoc/index.html` in a web browser.
+
+### Viewing Documentation
+
+- **Frontend Docs**: Open `frontend/docs/index.html` in your browser
+- **Backend Docs**: Open `backend/build/docs/kdoc/index.html` in your browser
+
+Both documentation sets include:
+- API documentation
+- Code structure and organization
+- Method and class descriptions
+- Parameter and return type information
+
+### Documentation in Version Control
+
+- Frontend documentation is included in the repository (`frontend/docs/`)
+- Backend documentation is included in the repository (`backend/build/docs/kdoc/`)
+- Both documentation sets are kept up-to-date with the codebase
+
+## Development Notes
+
+- **Database**: Uses H2 in-memory database that resets on each startup
+- **Authentication**: JWT-based authentication system
+- **Cross-Origin**: Frontend and backend are configured to work together via proxy
+- **Material Design**: UI components use Angular Material
+- **Code Quality**: Both frontend and backend include comprehensive documentation
+
+
 
