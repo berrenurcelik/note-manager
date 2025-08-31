@@ -12,104 +12,106 @@ import org.springframework.stereotype.Controller
 import java.util.UUID
 
 /**
- * GraphQL Controller for User operations
- * 
- * Provides GraphQL endpoints for querying and mutating User data.
- * Available at /graphql endpoint.
+ * GraphQL-Controller für Benutzer-Operationen.
+ *
+ * Diese Klasse stellt GraphQL-Endpunkte für die Abfrage und Mutation von Benutzerdaten bereit.
+ * Die Endpunkte sind unter `/graphql` verfügbar.
+ *
+ * @property userService Der Dienst zur Verarbeitung der Benutzerlogik.
  */
 @Controller
 class UserGraphQLController(private val userService: UserService) {
     private val logger = LoggerFactory.getLogger(UserGraphQLController::class.java)
 
     /**
-     * Query to get all users
-     * 
-     * @return List of all users
+     * Abfrage, um alle Benutzer abzurufen.
+     *
+     * @return Eine Liste aller Benutzer.
      */
     @QueryMapping
     fun users(): List<User> {
         val auth = SecurityContextHolder.getContext().authentication
-        logger.info("GraphQL query: users by authenticated user: ${auth?.name}")
+        logger.info("GraphQL-Abfrage: Benutzer von authentifiziertem Benutzer: ${auth?.name}")
         return userService.findAll()
     }
 
     /**
-     * Query to get a user by ID
-     * 
-     * @param id User ID
-     * @return User or null if not found
+     * Abfrage, um einen Benutzer anhand seiner ID abzurufen.
+     *
+     * @param id Die ID des Benutzers als String.
+     * @return Der Benutzer oder `null`, wenn er nicht gefunden wurde.
      */
     @QueryMapping
     fun user(@Argument id: String): User? {
-        logger.info("GraphQL query: user with id: $id")
+        logger.info("GraphQL-Abfrage: Benutzer mit ID: $id")
         return try {
             val uuid = UUID.fromString(id)
             userService.findById(uuid)
         } catch (e: IllegalArgumentException) {
-            logger.error("Invalid UUID format: $id")
+            logger.error("Ungültiges UUID-Format: $id")
             null
         }
     }
 
     /**
-     * Query to get a user by username
-     * 
-     * @param username Username
-     * @return User or null if not found
+     * Abfrage, um einen Benutzer anhand seines Benutzernamens abzurufen.
+     *
+     * @param username Der Benutzername.
+     * @return Der Benutzer oder `null`, wenn er nicht gefunden wurde.
      */
     @QueryMapping
     fun userByUsername(@Argument username: String): User? {
-        logger.info("GraphQL query: userByUsername with username: $username")
+        logger.info("GraphQL-Abfrage: userByUsername mit Benutzername: $username")
         return userService.findByUsername(username)
     }
 
     /**
-     * Mutation to create a new user
-     * 
-     * @param input User input data
-     * @return Created user
+     * Mutation, um einen neuen Benutzer zu erstellen.
+     *
+     * @param input Die Eingabedaten des Benutzers ([UserInput]).
+     * @return Der neu erstellte Benutzer.
      */
     @MutationMapping
     fun createUser(@Argument input: UserInput): User {
-        logger.info("GraphQL mutation: createUser with username: ${input.username}")
+        logger.info("GraphQL-Mutation: createUser mit Benutzername: ${input.username}")
         val user = userService.create(input.username, input.firstName, input.lastName, input.email, input.password)
-        logger.info("User created via GraphQL: $user")
+        logger.info("Benutzer über GraphQL erstellt: $user")
         return user
     }
 
     /**
-     * Mutation to update an existing user
-     * 
-     * @param id User ID
-     * @param input Updated user data
-     * @return Updated user or null if not found
+     * Mutation, um einen bestehenden Benutzer zu aktualisieren.
+     *
+     * @param id Die ID des zu aktualisierenden Benutzers als String.
+     * @param input Die aktualisierten Benutzerdaten ([UserInput]).
+     * @return Der aktualisierte Benutzer oder `null`, wenn er nicht gefunden wurde.
      */
     @MutationMapping
     fun updateUser(@Argument id: String, @Argument input: UserInput): User? {
-        logger.info("GraphQL mutation: updateUser with id: $id")
+        logger.info("GraphQL-Mutation: updateUser mit ID: $id")
         return try {
             val uuid = UUID.fromString(id)
             userService.update(uuid, input.username, input.firstName, input.lastName, input.email, input.password)
         } catch (e: IllegalArgumentException) {
-            logger.error("Invalid UUID format: $id")
+            logger.error("Ungültiges UUID-Format: $id")
             null
         }
     }
 
     /**
-     * Mutation to delete a user
-     * 
-     * @param id User ID
-     * @return true if deleted, false if not found
+     * Mutation, um einen Benutzer zu löschen.
+     *
+     * @param id Die ID des zu löschenden Benutzers als String.
+     * @return `true`, wenn der Benutzer gelöscht wurde, sonst `false`.
      */
     @MutationMapping
     fun deleteUser(@Argument id: String): Boolean {
-        logger.info("GraphQL mutation: deleteUser with id: $id")
+        logger.info("GraphQL-Mutation: deleteUser mit ID: $id")
         return try {
             val uuid = UUID.fromString(id)
             userService.delete(uuid)
         } catch (e: IllegalArgumentException) {
-            logger.error("Invalid UUID format: $id")
+            logger.error("Ungültiges UUID-Format: $id")
             false
         }
     }
