@@ -1,0 +1,183 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:de.thm.mni.backend.auth.api.dto////PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/index.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/LoginRequest///PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-login-request/index.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/LoginRequest/LoginRequest/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-login-request/-login-request.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/LoginRequest/password/#/PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-login-request/password.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/LoginRequest/username/#/PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-login-request/username.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/TokenResponse///PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-token-response/index.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/TokenResponse/TokenResponse/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-token-response/-token-response.html
+$dokka.location:de.thm.mni.backend.auth.api.dto/TokenResponse/token/#/PointingToDeclaration/backend/de.thm.mni.backend.auth.api.dto/-token-response/token.html
+$dokka.location:de.thm.mni.backend.auth.api////PointingToDeclaration/backend/de.thm.mni.backend.auth.api/index.html
+$dokka.location:de.thm.mni.backend.auth.api/AuthApi///PointingToDeclaration/backend/de.thm.mni.backend.auth.api/-auth-api/index.html
+$dokka.location:de.thm.mni.backend.auth.api/AuthApi/AuthApi/#de.thm.mni.backend.user.service.UserService#de.thm.mni.backend.auth.token.TokenService/PointingToDeclaration/backend/de.thm.mni.backend.auth.api/-auth-api/-auth-api.html
+$dokka.location:de.thm.mni.backend.auth.api/AuthApi/login/#de.thm.mni.backend.auth.api.dto.LoginRequest/PointingToDeclaration/backend/de.thm.mni.backend.auth.api/-auth-api/login.html
+$dokka.location:de.thm.mni.backend.auth.filter////PointingToDeclaration/backend/de.thm.mni.backend.auth.filter/index.html
+$dokka.location:de.thm.mni.backend.auth.filter/JwtAuthenticationFilter///PointingToDeclaration/backend/de.thm.mni.backend.auth.filter/-jwt-authentication-filter/index.html
+$dokka.location:de.thm.mni.backend.auth.filter/JwtAuthenticationFilter/JwtAuthenticationFilter/#de.thm.mni.backend.auth.token.TokenService/PointingToDeclaration/backend/de.thm.mni.backend.auth.filter/-jwt-authentication-filter/-jwt-authentication-filter.html
+$dokka.location:de.thm.mni.backend.auth.token////PointingToDeclaration/backend/de.thm.mni.backend.auth.token/index.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService///PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/index.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/TokenService/#de.thm.mni.backend.user.service.UserService/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/-token-service.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/create/#de.thm.mni.backend.user.model.User/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/create.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/decode/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/decode.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/getUserFromToken/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/get-user-from-token.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/isValid/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/is-valid.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/keyPair/#/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/key-pair.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/privateKey/#/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/private-key.html
+$dokka.location:de.thm.mni.backend.auth.token/TokenService/publicKey/#/PointingToDeclaration/backend/de.thm.mni.backend.auth.token/-token-service/public-key.html
+$dokka.location:de.thm.mni.backend.config////PointingToDeclaration/backend/de.thm.mni.backend.config/index.html
+$dokka.location:de.thm.mni.backend.config/DataLoader///PointingToDeclaration/backend/de.thm.mni.backend.config/-data-loader/index.html
+$dokka.location:de.thm.mni.backend.config/DataLoader/DataLoader/#de.thm.mni.backend.user.repository.UserRepository#de.thm.mni.backend.notebook.repository.NotebookRepository#de.thm.mni.backend.note.repository.NoteRepository/PointingToDeclaration/backend/de.thm.mni.backend.config/-data-loader/-data-loader.html
+$dokka.location:de.thm.mni.backend.config/DataLoader/run/#kotlin.Array[kotlin.String?]/PointingToDeclaration/backend/de.thm.mni.backend.config/-data-loader/run.html
+$dokka.location:de.thm.mni.backend.config/SecurityConfig///PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/index.html
+$dokka.location:de.thm.mni.backend.config/SecurityConfig/SecurityConfig/#de.thm.mni.backend.auth.filter.JwtAuthenticationFilter/PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/-security-config.html
+$dokka.location:de.thm.mni.backend.config/SecurityConfig/corsConfigurationSource/#/PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/cors-configuration-source.html
+$dokka.location:de.thm.mni.backend.config/SecurityConfig/securityFilterChain/#org.springframework.security.config.annotation.web.builders.HttpSecurity/PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/security-filter-chain.html
+$dokka.location:de.thm.mni.backend.note.api////PointingToDeclaration/backend/de.thm.mni.backend.note.api/index.html
+$dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest///PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/index.html
+$dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest/CreateNoteRequest/#kotlin.String#kotlin.String#java.util.UUID?/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/-create-note-request.html
+$dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest/content/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/content.html
+$dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest/notebookId/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/notebook-id.html
+$dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest/title/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/title.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi///PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/index.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/NoteApi/#de.thm.mni.backend.note.repository.NoteRepository#de.thm.mni.backend.notebook.repository.NotebookRepository/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/-note-api.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/createNote/#de.thm.mni.backend.note.api.CreateNoteRequest#org.springframework.security.core.Authentication/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/create-note.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/deleteNote/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/delete-note.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/getAllNotes/#org.springframework.security.core.Authentication#java.util.UUID?/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/get-all-notes.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/getNoteById/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/get-note-by-id.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/searchNotes/#kotlin.String#org.springframework.security.core.Authentication/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/search-notes.html
+$dokka.location:de.thm.mni.backend.note.api/NoteApi/updateNote/#java.util.UUID#de.thm.mni.backend.note.api.UpdateNoteRequest/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/update-note.html
+$dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest///PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/index.html
+$dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest/UpdateNoteRequest/#kotlin.String#kotlin.String#java.util.UUID?/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/-update-note-request.html
+$dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest/content/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/content.html
+$dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest/notebookId/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/notebook-id.html
+$dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest/title/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/title.html
+$dokka.location:de.thm.mni.backend.note.model////PointingToDeclaration/backend/de.thm.mni.backend.note.model/index.html
+$dokka.location:de.thm.mni.backend.note.model/Note///PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/index.html
+$dokka.location:de.thm.mni.backend.note.model/Note/Note/#java.util.UUID?#kotlin.String#java.util.Date#java.util.Date#kotlin.String#kotlin.String#java.util.UUID?#de.thm.mni.backend.notebook.model.Notebook?/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/-note.html
+$dokka.location:de.thm.mni.backend.note.model/Note/content/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/content.html
+$dokka.location:de.thm.mni.backend.note.model/Note/createdAt/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/created-at.html
+$dokka.location:de.thm.mni.backend.note.model/Note/id/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/id.html
+$dokka.location:de.thm.mni.backend.note.model/Note/modifiedAt/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/modified-at.html
+$dokka.location:de.thm.mni.backend.note.model/Note/notebook/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/notebook.html
+$dokka.location:de.thm.mni.backend.note.model/Note/notebookId/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/notebook-id.html
+$dokka.location:de.thm.mni.backend.note.model/Note/title/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/title.html
+$dokka.location:de.thm.mni.backend.note.model/Note/userId/#/PointingToDeclaration/backend/de.thm.mni.backend.note.model/-note/user-id.html
+$dokka.location:de.thm.mni.backend.note.repository////PointingToDeclaration/backend/de.thm.mni.backend.note.repository/index.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository///PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/index.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByNotebookId/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-notebook-id.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByNotebook_Id/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-notebook_-id.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByTitleContainingIgnoreCase/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-title-containing-ignore-case.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByUserId/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-user-id.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByUserIdAndNotebookId/#kotlin.String#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-user-id-and-notebook-id.html
+$dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByUserIdAndTitleContainingIgnoreCase/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-user-id-and-title-containing-ignore-case.html
+$dokka.location:de.thm.mni.backend.notebook.api////PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/index.html
+$dokka.location:de.thm.mni.backend.notebook.api/CreateNotebookRequest///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-create-notebook-request/index.html
+$dokka.location:de.thm.mni.backend.notebook.api/CreateNotebookRequest/CreateNotebookRequest/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-create-notebook-request/-create-notebook-request.html
+$dokka.location:de.thm.mni.backend.notebook.api/CreateNotebookRequest/image/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-create-notebook-request/image.html
+$dokka.location:de.thm.mni.backend.notebook.api/CreateNotebookRequest/title/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-create-notebook-request/title.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/index.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/NotebookApi/#de.thm.mni.backend.notebook.repository.NotebookRepository/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/-notebook-api.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/createNotebook/#de.thm.mni.backend.notebook.api.CreateNotebookRequest#org.springframework.security.core.Authentication/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/create-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/deleteNotebook/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/delete-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/getAllNotebooks/#org.springframework.security.core.Authentication/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/get-all-notebooks.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/getNotebookById/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/get-notebook-by-id.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/updateNotebook/#java.util.UUID#de.thm.mni.backend.notebook.api.UpdateNotebookRequest/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/update-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/index.html
+$dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest/UpdateNotebookRequest/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/-update-notebook-request.html
+$dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest/image/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/image.html
+$dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest/title/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/title.html
+$dokka.location:de.thm.mni.backend.notebook.model////PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/index.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook///PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/index.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/Notebook/#java.util.UUID?#kotlin.String#java.util.Date#kotlin.collections.List[de.thm.mni.backend.note.model.Note]#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/createdAt/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/created-at.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/id/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/id.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/image/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/image.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/notes/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/notes.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/title/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/title.html
+$dokka.location:de.thm.mni.backend.notebook.model/Notebook/userId/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.model/-notebook/user-id.html
+$dokka.location:de.thm.mni.backend.notebook.repository////PointingToDeclaration/backend/de.thm.mni.backend.notebook.repository/index.html
+$dokka.location:de.thm.mni.backend.notebook.repository/NotebookRepository///PointingToDeclaration/backend/de.thm.mni.backend.notebook.repository/-notebook-repository/index.html
+$dokka.location:de.thm.mni.backend.notebook.repository/NotebookRepository/findByUserId/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.repository/-notebook-repository/find-by-user-id.html
+$dokka.location:de.thm.mni.backend.user.api.dto////PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/index.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate///PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/index.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate/UserCreate/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/-user-create.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate/email/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/email.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate/firstName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/first-name.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate/lastName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/last-name.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate/password/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/password.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserCreate/username/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-create/username.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput///PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/index.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput/UserInput/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/-user-input.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput/email/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/email.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput/firstName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/first-name.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput/lastName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/last-name.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput/password/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/password.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserInput/username/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-input/username.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse///PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/index.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse/UserResponse/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/-user-response.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse/email/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/email.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse/firstName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/first-name.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse/id/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/id.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse/lastName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/last-name.html
+$dokka.location:de.thm.mni.backend.user.api.dto/UserResponse/username/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api.dto/-user-response/username.html
+$dokka.location:de.thm.mni.backend.user.api////PointingToDeclaration/backend/de.thm.mni.backend.user.api/index.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi///PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/index.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi/UserApi/#de.thm.mni.backend.user.service.UserService/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/-user-api.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi/deleteUser/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/delete-user.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi/getAllUsers/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/get-all-users.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi/getUserById/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/get-user-by-id.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi/register/#de.thm.mni.backend.user.api.dto.UserCreate/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/register.html
+$dokka.location:de.thm.mni.backend.user.api/UserApi/updateUser/#kotlin.String#de.thm.mni.backend.user.api.dto.UserCreate/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-api/update-user.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController///PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/index.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/UserGraphQLController/#de.thm.mni.backend.user.service.UserService/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/-user-graph-q-l-controller.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/createUser/#de.thm.mni.backend.user.api.dto.UserInput/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/create-user.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/deleteUser/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/delete-user.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/updateUser/#kotlin.String#de.thm.mni.backend.user.api.dto.UserInput/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/update-user.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/user/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/user.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/userByUsername/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/user-by-username.html
+$dokka.location:de.thm.mni.backend.user.api/UserGraphQLController/users/#/PointingToDeclaration/backend/de.thm.mni.backend.user.api/-user-graph-q-l-controller/users.html
+$dokka.location:de.thm.mni.backend.user.model////PointingToDeclaration/backend/de.thm.mni.backend.user.model/index.html
+$dokka.location:de.thm.mni.backend.user.model/User///PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/index.html
+$dokka.location:de.thm.mni.backend.user.model/User/User/#java.util.UUID?#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/-user.html
+$dokka.location:de.thm.mni.backend.user.model/User/email/#/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/email.html
+$dokka.location:de.thm.mni.backend.user.model/User/firstName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/first-name.html
+$dokka.location:de.thm.mni.backend.user.model/User/id/#/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/id.html
+$dokka.location:de.thm.mni.backend.user.model/User/lastName/#/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/last-name.html
+$dokka.location:de.thm.mni.backend.user.model/User/password/#/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/password.html
+$dokka.location:de.thm.mni.backend.user.model/User/username/#/PointingToDeclaration/backend/de.thm.mni.backend.user.model/-user/username.html
+$dokka.location:de.thm.mni.backend.user.repository////PointingToDeclaration/backend/de.thm.mni.backend.user.repository/index.html
+$dokka.location:de.thm.mni.backend.user.repository/UserRepository///PointingToDeclaration/backend/de.thm.mni.backend.user.repository/-user-repository/index.html
+$dokka.location:de.thm.mni.backend.user.repository/UserRepository/findByUsername/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.repository/-user-repository/find-by-username.html
+$dokka.location:de.thm.mni.backend.user.service////PointingToDeclaration/backend/de.thm.mni.backend.user.service/index.html
+$dokka.location:de.thm.mni.backend.user.service/UserService///PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/index.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/UserService/#de.thm.mni.backend.user.repository.UserRepository/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/-user-service.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/create/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/create.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/delete/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/delete.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/find/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/find.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/findAll/#/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/find-all.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/findById/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/find-by-id.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/findByUsername/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/find-by-username.html
+$dokka.location:de.thm.mni.backend.user.service/UserService/update/#java.util.UUID#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.user.service/-user-service/update.html
+$dokka.location:de.thm.mni.backend////PointingToDeclaration/backend/de.thm.mni.backend/index.html
+$dokka.location:de.thm.mni.backend//main/#kotlin.Array[kotlin.String]/PointingToDeclaration/backend/de.thm.mni.backend/main.html
+$dokka.location:de.thm.mni.backend/BackendApplication///PointingToDeclaration/backend/de.thm.mni.backend/-backend-application/index.html
+$dokka.location:de.thm.mni.backend/BackendApplication/BackendApplication/#/PointingToDeclaration/backend/de.thm.mni.backend/-backend-application/-backend-application.html
+de.thm.mni.backend
+de.thm.mni.backend.auth.api
+de.thm.mni.backend.auth.api.dto
+de.thm.mni.backend.auth.filter
+de.thm.mni.backend.auth.token
+de.thm.mni.backend.config
+de.thm.mni.backend.note.api
+de.thm.mni.backend.note.model
+de.thm.mni.backend.note.repository
+de.thm.mni.backend.notebook.api
+de.thm.mni.backend.notebook.model
+de.thm.mni.backend.notebook.repository
+de.thm.mni.backend.user.api
+de.thm.mni.backend.user.api.dto
+de.thm.mni.backend.user.model
+de.thm.mni.backend.user.repository
+de.thm.mni.backend.user.service
+
