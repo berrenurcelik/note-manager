@@ -33,6 +33,12 @@ $dokka.location:de.thm.mni.backend.config/SecurityConfig///PointingToDeclaration
 $dokka.location:de.thm.mni.backend.config/SecurityConfig/SecurityConfig/#de.thm.mni.backend.auth.filter.JwtAuthenticationFilter/PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/-security-config.html
 $dokka.location:de.thm.mni.backend.config/SecurityConfig/corsConfigurationSource/#/PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/cors-configuration-source.html
 $dokka.location:de.thm.mni.backend.config/SecurityConfig/securityFilterChain/#org.springframework.security.config.annotation.web.builders.HttpSecurity/PointingToDeclaration/backend/de.thm.mni.backend.config/-security-config/security-filter-chain.html
+$dokka.location:de.thm.mni.backend.note.api.dto////PointingToDeclaration/backend/de.thm.mni.backend.note.api.dto/index.html
+$dokka.location:de.thm.mni.backend.note.api.dto/NoteInput///PointingToDeclaration/backend/de.thm.mni.backend.note.api.dto/-note-input/index.html
+$dokka.location:de.thm.mni.backend.note.api.dto/NoteInput/NoteInput/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.api.dto/-note-input/-note-input.html
+$dokka.location:de.thm.mni.backend.note.api.dto/NoteInput/content/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api.dto/-note-input/content.html
+$dokka.location:de.thm.mni.backend.note.api.dto/NoteInput/notebookId/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api.dto/-note-input/notebook-id.html
+$dokka.location:de.thm.mni.backend.note.api.dto/NoteInput/title/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api.dto/-note-input/title.html
 $dokka.location:de.thm.mni.backend.note.api////PointingToDeclaration/backend/de.thm.mni.backend.note.api/index.html
 $dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest///PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/index.html
 $dokka.location:de.thm.mni.backend.note.api/CreateNoteRequest/CreateNoteRequest/#kotlin.String#kotlin.String#java.util.UUID?/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-create-note-request/-create-note-request.html
@@ -47,6 +53,15 @@ $dokka.location:de.thm.mni.backend.note.api/NoteApi/getAllNotes/#org.springframe
 $dokka.location:de.thm.mni.backend.note.api/NoteApi/getNoteById/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/get-note-by-id.html
 $dokka.location:de.thm.mni.backend.note.api/NoteApi/searchNotes/#kotlin.String#org.springframework.security.core.Authentication/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/search-notes.html
 $dokka.location:de.thm.mni.backend.note.api/NoteApi/updateNote/#java.util.UUID#de.thm.mni.backend.note.api.UpdateNoteRequest/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-api/update-note.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController///PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/index.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/NoteGraphQLController/#de.thm.mni.backend.note.repository.NoteRepository#de.thm.mni.backend.notebook.repository.NotebookRepository/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/-note-graph-q-l-controller.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/createNote/#de.thm.mni.backend.note.api.dto.NoteInput/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/create-note.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/deleteNote/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/delete-note.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/note/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/note.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/notes/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/notes.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/notesByNotebook/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/notes-by-notebook.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/notesByTitle/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/notes-by-title.html
+$dokka.location:de.thm.mni.backend.note.api/NoteGraphQLController/updateNote/#kotlin.String#de.thm.mni.backend.note.api.dto.NoteInput/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-note-graph-q-l-controller/update-note.html
 $dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest///PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/index.html
 $dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest/UpdateNoteRequest/#kotlin.String#kotlin.String#java.util.UUID?/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/-update-note-request.html
 $dokka.location:de.thm.mni.backend.note.api/UpdateNoteRequest/content/#/PointingToDeclaration/backend/de.thm.mni.backend.note.api/-update-note-request/content.html
@@ -71,6 +86,11 @@ $dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByTitleCon
 $dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByUserId/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-user-id.html
 $dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByUserIdAndNotebookId/#kotlin.String#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-user-id-and-notebook-id.html
 $dokka.location:de.thm.mni.backend.note.repository/NoteRepository/findByUserIdAndTitleContainingIgnoreCase/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.note.repository/-note-repository/find-by-user-id-and-title-containing-ignore-case.html
+$dokka.location:de.thm.mni.backend.notebook.api.dto////PointingToDeclaration/backend/de.thm.mni.backend.notebook.api.dto/index.html
+$dokka.location:de.thm.mni.backend.notebook.api.dto/NotebookInput///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api.dto/-notebook-input/index.html
+$dokka.location:de.thm.mni.backend.notebook.api.dto/NotebookInput/NotebookInput/#kotlin.String#kotlin.String?/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api.dto/-notebook-input/-notebook-input.html
+$dokka.location:de.thm.mni.backend.notebook.api.dto/NotebookInput/image/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api.dto/-notebook-input/image.html
+$dokka.location:de.thm.mni.backend.notebook.api.dto/NotebookInput/title/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api.dto/-notebook-input/title.html
 $dokka.location:de.thm.mni.backend.notebook.api////PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/index.html
 $dokka.location:de.thm.mni.backend.notebook.api/CreateNotebookRequest///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-create-notebook-request/index.html
 $dokka.location:de.thm.mni.backend.notebook.api/CreateNotebookRequest/CreateNotebookRequest/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-create-notebook-request/-create-notebook-request.html
@@ -83,6 +103,14 @@ $dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/deleteNotebook/#java
 $dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/getAllNotebooks/#org.springframework.security.core.Authentication/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/get-all-notebooks.html
 $dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/getNotebookById/#java.util.UUID/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/get-notebook-by-id.html
 $dokka.location:de.thm.mni.backend.notebook.api/NotebookApi/updateNotebook/#java.util.UUID#de.thm.mni.backend.notebook.api.UpdateNotebookRequest/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-api/update-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/index.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/NotebookGraphQLController/#de.thm.mni.backend.notebook.repository.NotebookRepository/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/-notebook-graph-q-l-controller.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/createNotebook/#de.thm.mni.backend.notebook.api.dto.NotebookInput/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/create-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/deleteNotebook/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/delete-notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/notebook/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/notebook.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/notebooks/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/notebooks.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/notebooksByUser/#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/notebooks-by-user.html
+$dokka.location:de.thm.mni.backend.notebook.api/NotebookGraphQLController/updateNotebook/#kotlin.String#de.thm.mni.backend.notebook.api.dto.NotebookInput/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-notebook-graph-q-l-controller/update-notebook.html
 $dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest///PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/index.html
 $dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest/UpdateNotebookRequest/#kotlin.String#kotlin.String/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/-update-notebook-request.html
 $dokka.location:de.thm.mni.backend.notebook.api/UpdateNotebookRequest/image/#/PointingToDeclaration/backend/de.thm.mni.backend.notebook.api/-update-notebook-request/image.html
@@ -170,9 +198,11 @@ de.thm.mni.backend.auth.filter
 de.thm.mni.backend.auth.token
 de.thm.mni.backend.config
 de.thm.mni.backend.note.api
+de.thm.mni.backend.note.api.dto
 de.thm.mni.backend.note.model
 de.thm.mni.backend.note.repository
 de.thm.mni.backend.notebook.api
+de.thm.mni.backend.notebook.api.dto
 de.thm.mni.backend.notebook.model
 de.thm.mni.backend.notebook.repository
 de.thm.mni.backend.user.api

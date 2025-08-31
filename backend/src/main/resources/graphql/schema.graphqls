@@ -14,14 +14,62 @@ input UserInput {
     password: String!
 }
 
+type Note {
+    id: ID!
+    title: String!
+    content: String!
+    createdAt: String!
+    modifiedAt: String!
+    userId: String!
+    notebookId: String!
+    notebook: Notebook
+}
+
+input NoteInput {
+    title: String!
+    content: String!
+    notebookId: String!
+}
+
+type Notebook {
+    id: ID!
+    title: String!
+    createdAt: String!
+    userId: String!
+    image: String
+    notes: [Note!]!
+}
+
+input NotebookInput {
+    title: String!
+    image: String
+}
+
 type Query {
     users: [User!]!
     user(id: ID!): User
     userByUsername(username: String!): User
+    
+    notes: [Note!]!
+    note(id: ID!): Note
+    notesByNotebook(notebookId: ID!): [Note!]!
+    notesByTitle(title: String!): [Note!]!
+    
+    notebooks: [Notebook!]!
+    notebook(id: ID!): Notebook
+    notebooksByUser(userId: ID!): [Notebook!]!
 }
 
 type Mutation {
     createUser(input: UserInput!): User!
     updateUser(id: ID!, input: UserInput!): User
     deleteUser(id: ID!): Boolean!
+    
+    createNote(input: NoteInput!): Note!
+    updateNote(id: ID!, input: NoteInput!): Note
+    deleteNote(id: ID!): Boolean!
+    
+    createNotebook(input: NotebookInput!): Notebook!
+    updateNotebook(id: ID!, input: NotebookInput!): Notebook
+    deleteNotebook(id: ID!): Boolean!
 }
