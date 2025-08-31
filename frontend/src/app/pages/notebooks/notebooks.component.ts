@@ -11,8 +11,8 @@ import { CreateNotebookDialog } from '../shared/create-notebook-dialog/create-no
 import { MatCard } from '@angular/material/card';
 
 /**
- * @fileoverview Der Haupt-Component für die Notizbuch-Verwaltung.
- * @description Dieser Component ist verantwortlich für das Laden, Anzeigen und Verwalten der Notizbücher des Benutzers.
+ * Der Haupt-Component für die Notizbuch-Verwaltung.
+ * Dieser Component ist verantwortlich für das Laden, Anzeigen und Verwalten der Notizbücher des Benutzers.
  * Er ermöglicht das Hinzufügen, Bearbeiten und Löschen von Notizbüchern über einen Dialog.
  */
 @Component({

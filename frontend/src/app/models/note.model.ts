@@ -1,6 +1,6 @@
 /**
- * @fileoverview Die Datenmodellklasse für eine Notiz.
- * @description Diese Klasse definiert die Struktur und die Eigenschaften einer einzelnen Notiz.
+ * Die Datenmodellklasse für eine Notiz.
+ * Diese Klasse definiert die Struktur und die Eigenschaften einer einzelnen Notiz.
  */
 export class Note {
   /**

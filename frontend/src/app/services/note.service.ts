@@ -1,6 +1,6 @@
 /**
- * @fileoverview Angular-Service für die Verwaltung von Notizen.
- * @description Dieser Dienst interagiert mit der Backend-API, um CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen) für Notizen durchzuführen.
+ * Angular-Service für die Verwaltung von Notizen.
+ * Dieser Dienst interagiert mit der Backend-API, um CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen) für Notizen durchzuführen.
  * Er verwendet `HttpClient` für die HTTP-Anfragen und `localStorage` zur Authentifizierung.
  * @since 1.0.0
  */

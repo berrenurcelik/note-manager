@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 /**
- * @fileoverview Der Authentifizierungsdienst, der die Interaktion mit den Authentifizierungs- und Benutzer-APIs handhabt.
- * @description Dieser Dienst bietet Methoden für die Benutzeranmeldung, Registrierung, den Abruf von Benutzerlisten,
+ * Der Authentifizierungsdienst, der die Interaktion mit den Authentifizierungs- und Benutzer-APIs handhabt.
+ * Dieser Dienst bietet Methoden für die Benutzeranmeldung, Registrierung, den Abruf von Benutzerlisten,
  * die Überprüfung des Anmeldestatus und das Abmelden. Er ist in der gesamten Anwendung als Singleton verfügbar.
  */
 

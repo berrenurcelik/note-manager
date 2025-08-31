@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 /**
- * @fileoverview Der Login-Komponente-Dienst, der die Authentifizierung des Benutzers handhabt.
- * @description Dieser Komponenten-Dienst verwaltet die Benutzeroberfläche und die Logik für das Login,
+ * Der Login-Komponente-Dienst, der die Authentifizierung des Benutzers handhabt.
+ * Dieser Komponenten-Dienst verwaltet die Benutzeroberfläche und die Logik für das Login,
  * einschließlich der Dateneingabe, der Validierung und der Interaktion mit dem Authentifizierungsdienst.
  */
 @Component({

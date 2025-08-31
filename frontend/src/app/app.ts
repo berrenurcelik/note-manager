@@ -1,6 +1,6 @@
 /**
- * @fileoverview Die Haupt-Anwendungskomponente für die Angular-Anwendung.
- * @description Diese Komponente verwaltet die allgemeine Layout-Struktur mit einem Seiten-Navigationsmenü (`sidenav`) und einer Toolbar.
+ * Die Haupt-Anwendungskomponente für die Angular-Anwendung.
+ * Diese Komponente verwaltet die allgemeine Layout-Struktur mit einem Seiten-Navigationsmenü (`sidenav`) und einer Toolbar.
  * Sie kümmert sich um die Benutzeroberfläche, die Anzeige des Benutzernamens, die Authentifizierung und die Navigation.
  * @since 1.0.0
  */

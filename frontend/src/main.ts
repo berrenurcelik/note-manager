@@ -1,6 +1,6 @@
 /**
- * @fileoverview Der Haupteinstiegspunkt für das Bootstrapping der Angular-Anwendung.
- * @description Dieses Modul importiert die notwendigen Funktionen und die Hauptkomponente, um die Anwendung zu starten.
+ * Der Haupteinstiegspunkt für das Bootstrapping der Angular-Anwendung.
+ * Dieses Modul importiert die notwendigen Funktionen und die Hauptkomponente, um die Anwendung zu starten.
  * @since 1.0.0
  */
 import { bootstrapApplication } from '@angular/platform-browser';

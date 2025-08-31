@@ -19,8 +19,8 @@ import { ConfirmDialogComponent } from '../dialog/dialog';
 import {MatIcon} from '@angular/material/icon';
 
 /**
- * @fileoverview Dialog-Komponente zum Erstellen, Bearbeiten und Löschen eines Notizbuchs.
- * @description Diese Komponente dient als modaler Dialog, um Notizbuchdaten einzugeben und über den `NotebookService` mit der API zu interagieren.
+ * Dialog-Komponente zum Erstellen, Bearbeiten und Löschen eines Notizbuchs.
+ * Diese Komponente dient als modaler Dialog, um Notizbuchdaten einzugeben und über den `NotebookService` mit der API zu interagieren.
  * Sie unterstützt die Bearbeitung eines bestehenden Notizbuchs (über `MAT_DIALOG_DATA`) oder die Erstellung eines neuen.
  * Zusätzlich bietet sie eine Löschfunktion, die einen Bestätigungsdialog öffnet.
  */

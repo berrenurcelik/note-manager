@@ -1,6 +1,6 @@
 /**
- * @fileoverview Angular-Service für die Verwaltung von Notizbüchern.
- * @description Dieser Dienst interagiert mit der Backend-API, um CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen) für Notizbücher durchzuführen.
+ * Angular-Service für die Verwaltung von Notizbüchern.
+ * Dieser Dienst interagiert mit der Backend-API, um CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen) für Notizbücher durchzuführen.
  * Er verwendet `HttpClient` für die HTTP-Anfragen und `localStorage` zur Authentifizierung.
  * @since 1.0.0
  */

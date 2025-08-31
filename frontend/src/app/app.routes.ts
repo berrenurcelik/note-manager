@@ -1,6 +1,6 @@
 /**
- * @fileoverview Definiert die Haupt-Routing-Konfiguration für die Anwendung.
- * @description Dieses Modul exportiert ein Array von `Routes`, das die Navigationspfade und die zugehörigen Komponenten festlegt.
+ * Definiert die Haupt-Routing-Konfiguration für die Anwendung.
+ * Dieses Modul exportiert ein Array von `Routes`, das die Navigationspfade und die zugehörigen Komponenten festlegt.
  */
 import { Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login';

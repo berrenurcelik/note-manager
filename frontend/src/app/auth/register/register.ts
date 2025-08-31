@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 /**
- * @fileoverview Der Register-Komponente-Dienst, der die Benutzerregistrierung handhabt.
- * @description Dieser Komponenten-Dienst verwaltet die Benutzeroberfläche und die Logik für die Benutzerregistrierung,
+ * Der Register-Komponente-Dienst, der die Benutzerregistrierung handhabt.
+ * Dieser Komponenten-Dienst verwaltet die Benutzeroberfläche und die Logik für die Benutzerregistrierung,
  * einschließlich der Dateneingabe, der Validierung und der Interaktion mit dem Authentifizierungsdienst.
  */
 @Component({

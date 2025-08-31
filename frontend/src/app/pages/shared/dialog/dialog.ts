@@ -9,8 +9,8 @@ import {
 import {MatButton} from '@angular/material/button';
 
 /**
- * @fileoverview Dialog-Komponente für die Bestätigung von Aktionen.
- * @description Diese Komponente dient als generischer Bestätigungsdialog mit einem Titel und einer Nachricht.
+ * Dialog-Komponente für die Bestätigung von Aktionen.
+ * Diese Komponente dient als generischer Bestätigungsdialog mit einem Titel und einer Nachricht.
  * Sie gibt `true` zurück, wenn der Benutzer bestätigt, und `false`, wenn er abbricht.
  */
 @Component({

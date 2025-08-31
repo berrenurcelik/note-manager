@@ -1,8 +1,8 @@
 import {Note} from './note.model';
 
 /**
- * @fileoverview Die Datenmodellklasse für ein Notizbuch.
- * @description Diese Klasse definiert die Struktur und die Eigenschaften eines einzelnen Notizbuchs,
+ * Die Datenmodellklasse für ein Notizbuch.
+ * Diese Klasse definiert die Struktur und die Eigenschaften eines einzelnen Notizbuchs,
  * das eine Sammlung von Notizen enthält.
  */
 export class Notebook {

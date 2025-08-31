@@ -12,8 +12,8 @@ import { CreateNoteDialog } from '../shared/create-note-dialog/create-note-dialo
 import {MatFormField, MatInput, MatLabel, MatSuffix} from '@angular/material/input';
 
 /**
- * @fileoverview Der Component für die Notizen-Seite.
- * @description Dieser Component ist für das Anzeigen, Filtern und Verwalten von Notizen zuständig.
+ * Der Component für die Notizen-Seite.
+ * Dieser Component ist für das Anzeigen, Filtern und Verwalten von Notizen zuständig.
  * Er lädt Notizen entweder für ein spezifisches Notizbuch oder alle Notizen und ermöglicht
  * die Interaktion (Erstellen, Bearbeiten, Löschen) über einen Dialog.
  */

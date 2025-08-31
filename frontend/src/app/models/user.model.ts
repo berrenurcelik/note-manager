@@ -1,6 +1,6 @@
 /**
- * @fileoverview Die Schnittstelle für die Darstellung der Benutzerdaten.
- * @description Diese Schnittstelle definiert die Struktur der Benutzerdaten, die von der API abgerufen werden.
+ * Die Schnittstelle für die Darstellung der Benutzerdaten.
+ * Diese Schnittstelle definiert die Struktur der Benutzerdaten, die von der API abgerufen werden.
  */
 export interface User {
   /**

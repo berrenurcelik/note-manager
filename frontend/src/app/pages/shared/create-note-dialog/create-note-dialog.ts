@@ -11,8 +11,8 @@ import { Note } from '../../../models/note.model';
 import { ConfirmDialogComponent } from '../dialog/dialog';
 
 /**
- * @fileoverview Dialog-Komponente zum Erstellen, Bearbeiten und Löschen einer Notiz.
- * @description Diese Komponente dient als modaler Dialog, um Notizdaten einzugeben und über den `NoteService` mit der API zu interagieren.
+ * Dialog-Komponente zum Erstellen, Bearbeiten und Löschen einer Notiz.
+ * Diese Komponente dient als modaler Dialog, um Notizdaten einzugeben und über den `NoteService` mit der API zu interagieren.
  * Sie unterstützt die Bearbeitung einer bestehenden Notiz (über `MAT_DIALOG_DATA`) oder die Erstellung einer neuen Notiz.
  * Zusätzlich bietet sie eine Löschfunktion, die einen Bestätigungsdialog öffnet.
  */

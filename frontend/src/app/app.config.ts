@@ -1,6 +1,6 @@
 /**
- * @fileoverview Definiert die Anwendungskonfiguration für die Angular-Anwendung.
- * @description Dieses Modul konfiguriert die Provider, die für die Bootstrapping der Anwendung erforderlich sind, wie z. B. Router, HTTP-Client und Zonen-Wechselerkennung.
+ * Definiert die Anwendungskonfiguration für die Angular-Anwendung.
+ * Dieses Modul konfiguriert die Provider, die für die Bootstrapping der Anwendung erforderlich sind, wie z. B. Router, HTTP-Client und Zonen-Wechselerkennung.
  * @since 1.0.0
  */
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
