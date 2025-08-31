@@ -184,44 +184,28 @@ export class NotesComponent implements OnInit {
   }
 
   /**
-   * Aktualisiert eine Notiz in der lokalen Liste und ruft den Service auf, um die Daten zu speichern.
+   * Aktualisiert eine Notiz in der lokalen Liste.
+   * Die Notiz wurde bereits im Dialog aktualisiert und gespeichert.
    * @private
-   * @param {string} id Die ID der zu aktualisierenden Notiz.
-   * @param {{ title: string; content: string }} updatedData Die aktualisierten Notizdaten.
+   * @param {string} id Die ID der aktualisierten Notiz.
+   * @param {Note} updatedNote Die bereits aktualisierte Notiz aus dem Dialog.
    */
-  private handleUpdate(id: string, updatedData: { title: string; content: string }) {
-    this.noteService
-      .updateNote(id, { ...updatedData, notebookId: this.notebookId! })
-      .subscribe({
-        next: (updatedNote) => {
-          const index = this.notes.findIndex((n) => n.id === updatedNote.id);
-          if (index > -1) this.notes[index] = updatedNote;
-          this.filteredNotes = this.notes;
-        },
-        error: (err) => {
-          this.error = 'Fehler beim Bearbeiten der Notiz';
-          console.error(err);
-        },
-      });
+  private handleUpdate(id: string, updatedNote: Note) {
+    const index = this.notes.findIndex((n) => n.id === id);
+    if (index > -1) {
+      this.notes[index] = updatedNote;
+      this.filteredNotes = this.notes;
+    }
   }
 
   /**
-   * Erstellt eine neue Notiz, fügt sie zur lokalen Liste hinzu und speichert sie über den Service.
+   * Erstellt eine neue Notiz, fügt sie zur lokalen Liste hinzu.
+   * Die Notiz wurde bereits im Dialog erstellt und gespeichert.
    * @private
-   * @param {{ title: string; content: string }} newData Die Daten für die neue Notiz.
+   * @param {Note} createdNote Die bereits erstellte Notiz aus dem Dialog.
    */
-  private handleCreate(newData: { title: string; content: string }) {
-    this.noteService
-      .createNote({ ...newData, notebookId: this.notebookId! })
-      .subscribe({
-        next: (createdNote) => {
-          this.notes.push(createdNote);
-          this.filteredNotes = this.notes;
-        },
-        error: (err) => {
-          this.error = 'Fehler beim Erstellen der Notiz';
-          console.error(err);
-        },
-      });
+  private handleCreate(createdNote: Note) {
+    this.notes.push(createdNote);
+    this.filteredNotes = this.notes;
   }
 }
