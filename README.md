@@ -2,6 +2,10 @@
 
 A full-stack note management application built with Spring Boot (backend) and Angular (frontend).
 
+## Group Members
+- Berre Nur Celik 5487710
+- Jasmin Sandhu 5459616
+
 ## Project Overview
 
 This application allows users to:
