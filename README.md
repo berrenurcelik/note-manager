@@ -42,6 +42,17 @@ This application allows users to:
    npm install
    cd ..
    ```
+   
+- Installation Note 
+
+Before running `npm start`, you need to install the following package:
+
+```sh
+npm install concurrently --save-dev
+```
+
+This package is required to start both backend and frontend at the same time. If you run `npm start` without installing it, you will get the error: `concurrently: command not found`.
+
 
 3. **Start both backend and frontend**
    ```bash
