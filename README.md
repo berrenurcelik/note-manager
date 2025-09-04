@@ -132,7 +132,7 @@ The backend provides RESTful APIs for:
 
 ## Documentation Generation
 
-This project includes documentation for both frontend and backend components.
+This project includes comprehensive documentation for both frontend and backend components. Since the `build/` and `node_modules/` folders are excluded from submission, the documentation needs to be generated after cloning the project.
 
 ### Frontend Documentation (TypeDoc)
 
@@ -141,17 +141,11 @@ The frontend uses TypeDoc to generate documentation from TypeScript code and JSD
 #### Generate Frontend Documentation:
 ```bash
 cd frontend
-npm run docs
+npm install    # Install dependencies first
+npm run docs   # Generate documentation
 ```
 
-The documentation will be generated in `frontend/docs/` directory and can be viewed by opening `frontend/docs/index.html` in a web browser.
-
-#### View Generated Documentation:
-```bash
-cd frontend
-npm run docs:serve
-```
-This will start a local server to view the documentation at `http://localhost:8080`.
+The documentation will be generated in `frontend/docs/` directory. Open `frontend/docs/index.html` in your web browser to view it.
 
 ### Backend Documentation (Dokka)
 
@@ -163,24 +157,37 @@ cd backend
 ./gradlew dokkaHtml
 ```
 
-The documentation will be generated in `backend/build/docs/kdoc/` directory and can be viewed by opening `backend/build/docs/kdoc/index.html` in a web browser.
+The documentation will be generated in `backend/build/docs/kdoc/` directory. Open `backend/build/docs/kdoc/index.html` in your web browser to view it.
 
-### Viewing Documentation
+### Complete Documentation Generation Steps:
 
-- **Frontend Docs**: Open `frontend/docs/index.html` in your browser
-- **Backend Docs**: Open `backend/build/docs/kdoc/index.html` in your browser
+1. **Install Frontend Dependencies:**
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+2. **Generate Frontend Docs:**
+   ```bash
+   npm run docs
+   ```
+
+3. **Generate Backend Docs:**
+   ```bash
+   cd ../backend
+   ./gradlew dokkaHtml
+   ```
+
+4. **View Documentation:**
+   - Frontend: Open `frontend/docs/index.html` in your browser
+   - Backend: Open `backend/build/docs/kdoc/index.html` in your browser
 
 Both documentation sets include:
-- API documentation
+- Complete API documentation
 - Code structure and organization
-- Method and class descriptions
-- Parameter and return type information
+- Method and class descriptions with parameters
+- Return type information
 
-### Documentation in Version Control
-
-- Frontend documentation is included in the repository (`frontend/docs/`)
-- Backend documentation is included in the repository (`backend/build/docs/kdoc/`)
-- Both documentation sets are kept up-to-date with the codebase
 
 ## Development Notes
 
