@@ -84,11 +84,16 @@ export class CreateNoteDialog implements OnInit {
   /**
    * Ein Angular-Lebenszyklus-Hook, der beim Initialisieren des Components aufgerufen wird.
    * Er initialisiert die Eingabefelder, falls Daten für eine bestehende Notiz vorhanden sind.
+   * Auch die notebookId wird übernommen, wenn verfügbar.
    */
   ngOnInit() {
     if (this.data) {
       this.title = this.data.title;
       this.content = this.data.content;
+      
+      if (this.data.notebookId) {
+        this.notebookId = this.data.notebookId;
+      }
     }
   }
 
@@ -109,7 +114,9 @@ export class CreateNoteDialog implements OnInit {
 
     if (this.data && this.data.id) {
       this.noteService.updateNote(this.data.id, noteData).subscribe({
-        next: updatedNote => this.dialogRef.close(updatedNote),
+        next: updatedNote => {
+          this.dialogRef.close(updatedNote);
+        },
         error: error => {
           this.error = 'Fehler beim Bearbeiten der Notiz';
           console.error(error);
@@ -117,7 +124,9 @@ export class CreateNoteDialog implements OnInit {
       });
     } else {
       this.noteService.createNote(noteData).subscribe({
-        next: createdNote => this.dialogRef.close(createdNote),
+        next: createdNote => {
+          this.dialogRef.close(createdNote);
+        },
         error: error => {
           this.error = 'Fehler beim Erstellen der Notiz';
           console.error(error);

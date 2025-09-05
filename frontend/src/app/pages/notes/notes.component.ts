@@ -6,10 +6,15 @@ import { NoteService } from '../../services/note.service';
 import { Note } from '../../models/note.model';
 import { MatDialog } from '@angular/material/dialog';
 import { NotebookService } from '../../services/notebook.service';
-import { MatIconButton} from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { CreateNoteDialog } from '../shared/create-note-dialog/create-note-dialog';
-import {MatFormField, MatInput, MatLabel, MatSuffix} from '@angular/material/input';
+import {
+  MatFormField,
+  MatInput,
+  MatLabel,
+  MatSuffix,
+} from '@angular/material/input';
 
 /**
  * Der Component für die Notizen-Seite.
@@ -20,7 +25,17 @@ import {MatFormField, MatInput, MatLabel, MatSuffix} from '@angular/material/inp
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, MatIconButton, MatIcon, MatInput, MatFormField, MatLabel, MatSuffix],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    MatIconButton,
+    MatIcon,
+    MatInput,
+    MatFormField,
+    MatLabel,
+    MatSuffix,
+  ],
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css'],
 })
@@ -152,12 +167,22 @@ export class NotesComponent implements OnInit {
   /**
    * Öffnet den Dialog zum Erstellen oder Bearbeiten einer Notiz.
    * Behandelt das Ergebnis des Dialogs, um die lokale Liste der Notizen zu aktualisieren.
+   * Wenn keine Notiz übergeben wird und eine notebookId existiert, wird diese an den Dialog übergeben.
    * @param {Note} [note] Das optionale Notiz-Objekt, das bearbeitet werden soll.
    */
   openNoteDialog(note?: Note) {
+    let dialogData = note;
+    if (!note && this.notebookId) {
+      dialogData = {
+        title: '',
+        content: '',
+        notebookId: this.notebookId
+      } as Note;
+    }
+    
     const dialogRef = this.dialog.open(CreateNoteDialog, {
       width: '400px',
-      data: note,
+      data: dialogData,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -180,7 +205,7 @@ export class NotesComponent implements OnInit {
    */
   private handleDelete(id: string) {
     this.notes = this.notes.filter((n) => n.id !== id);
-    this.filteredNotes = this.notes;
+    this.searchNotes();
   }
 
   /**
@@ -191,11 +216,9 @@ export class NotesComponent implements OnInit {
    * @param {Note} updatedNote Die bereits aktualisierte Notiz aus dem Dialog.
    */
   private handleUpdate(id: string, updatedNote: Note) {
-    const index = this.notes.findIndex((n) => n.id === id);
-    if (index > -1) {
-      this.notes[index] = updatedNote;
-      this.filteredNotes = this.notes;
-    }
+    const index = this.notes.findIndex((n) => n.id === updatedNote.id);
+    if (index > -1) this.notes[index] = updatedNote;
+    this.searchNotes();
   }
 
   /**
@@ -206,6 +229,6 @@ export class NotesComponent implements OnInit {
    */
   private handleCreate(createdNote: Note) {
     this.notes.push(createdNote);
-    this.filteredNotes = this.notes;
+    this.searchNotes();
   }
 }
