@@ -62,6 +62,8 @@ This package is required to start both backend and frontend at the same time. If
    This will start:
    - Backend server on `http://localhost:8080`
    - Frontend application on `http://localhost:4200`
+   
+   The application uses automatic OS detection to run the correct commands for your operating system (Windows or Unix-based).
 
 ### Sample Login
 
@@ -73,9 +75,25 @@ You can also register new users through the registration form.
 
 ## Development
 
+### Cross-Platform Support
+
+The project uses a custom setup to support both Windows and Unix-based systems (macOS, Linux) seamlessly:
+
+- **Automatic OS Detection**: The `npm start` and `npm run build` commands automatically detect your operating system and use the appropriate commands.
+- **How it works**: Node.js scripts in the `scripts` folder check the `process.platform` value and run the correct version of Gradle wrapper:
+  - Windows: Uses `gradlew.bat`
+  - macOS/Linux: Uses `./gradlew`
+
 ### Backend (Spring Boot)
 
+For direct backend development:
+
 ```bash
+# On Windows
+cd backend
+gradlew.bat bootRun
+
+# On macOS/Linux
 cd backend
 ./gradlew bootRun
 ```
@@ -91,10 +109,33 @@ npm start
 
 The frontend will be available at `http://localhost:4200`
 
+## Technical Details
+
+### Cross-Platform Scripts
+
+The project includes several script configurations in `package.json`:
+
+```json
+{
+  "scripts": {
+    "start": "node scripts/start.js",
+    "start:unix": "concurrently \"cd backend && ./gradlew bootRun\" \"cd frontend && npm start\"",
+    "start:win": "concurrently \"cd backend && gradlew.bat bootRun\" \"cd frontend && npm start\"",
+    "build": "node scripts/build.js",
+    "build:unix": "concurrently \"cd backend && ./gradlew build\" \"cd frontend && npm run build\"",
+    "build:win": "concurrently \"cd backend && gradlew.bat build\" \"cd frontend && npm run build\""
+  }
+}
+```
+
+- **start.js** and **build.js** in the `scripts` folder detect the operating system and run the appropriate command
+- **concurrently** package is used to run both backend and frontend processes in parallel
+
 ## Project Structure
 
 ```
 NoteManager/
+├── scripts/                 # Cross-platform helper scripts
 ├── backend/                 # Spring Boot application
 │   ├── src/main/kotlin/     # Kotlin source code
 │   ├── src/main/resources/  # Configuration files
