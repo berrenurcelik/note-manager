@@ -90,11 +90,16 @@
   margin-bottom: 15px;
 }
 
-.note-header h3 {
-  margin: 0;
+.note-header h3,
+.note-content p {
   color: #333;
-  font-size: 18px;
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
+
 
 .note-content {
   margin-bottom: 15px;
@@ -105,7 +110,10 @@
   line-height: 1.5;
   margin: 0;
   white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
+
 
 .note-info {
   display: flex;
@@ -124,7 +132,6 @@
   text-align: center;
   color: #666;
   padding: 40px;
-  background: #f8f9fa;
   border-radius: 8px;
 }
 

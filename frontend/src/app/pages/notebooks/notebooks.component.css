@@ -120,9 +120,9 @@ img {
 .notebook-text h3 {
   margin: 0;
   font-size: 1rem;
-  flex: 1 1 auto; /* Text darf wachsen und umbrechen */
-  min-width: 0; /* wichtig für korrektes Wrapping in Flexbox */
-  word-break: break-word; /
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .notebook-text p {
