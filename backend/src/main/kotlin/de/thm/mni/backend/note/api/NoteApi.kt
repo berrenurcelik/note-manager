@@ -114,7 +114,8 @@ class NoteApi(
     /**
      * Aktualisiert eine bestehende Notiz.
      *
-     * Aktualisiert den Titel und den Inhalt einer Notiz anhand ihrer ID.
+     * Aktualisiert den Titel, den Inhalt und optional das Notizbuch einer Notiz anhand ihrer ID.
+     * Wenn kein neues Notizbuch angegeben ist, wird die bestehende Zuordnung beibehalten.
      *
      * @param id Die ID der zu aktualisierenden Notiz.
      * @param noteRequest Das [UpdateNoteRequest]-Objekt mit den aktualisierten Daten.
@@ -125,11 +126,17 @@ class NoteApi(
     fun updateNote(@PathVariable id: UUID, @RequestBody noteRequest: UpdateNoteRequest): ResponseEntity<Note> {
         val existingNote = noteRepository.findById(id)
         return if (existingNote.isPresent) {
+            val existing = existingNote.get()
+            val notebookId = noteRequest.notebookId ?: existing.notebookId
+            val notebook = notebookId?.let { notebookRepository.findById(it).orElse(null) }
+            
             val updatedNote = Note(
                 id = id,
                 title = noteRequest.title,
                 content = noteRequest.content,
-                userId = existingNote.get().userId,
+                userId = existing.userId,
+                notebookId = notebookId,
+                notebook = notebook,
                 modifiedAt = java.util.Date()
             )
             val savedNote = noteRepository.save(updatedNote)
@@ -175,7 +182,7 @@ data class CreateNoteRequest(
  *
  * @param title Der neue Titel der Notiz.
  * @param content Der neue Inhalt der Notiz.
- * @param notebookId (Hinweis: Dieses Feld wird im aktuellen Update-Endpunkt nicht verwendet)
+ * @param notebookId Die ID des Notizbuchs, dem die Notiz zugeordnet werden soll. Wenn null, wird die bestehende Zuordnung beibehalten.
  */
 data class UpdateNoteRequest(
     val title: String,
