@@ -53,6 +53,26 @@ npm install concurrently --save-dev
 
 This package is required to start both backend and frontend at the same time. If you run `npm start` without installing it, you will get the error: `concurrently: command not found`.
 
+Also, you need to build the backend first before starting the application:
+
+**For macOS/Linux:**
+
+```sh
+cd backend
+./gradlew build
+cd ..
+```
+
+**For Windows:**
+
+```sh
+cd backend
+gradlew.bat build
+cd ..
+```
+
+This ensures the backend is properly compiled before attempting to start the servers.
+
 
 3. **Start both backend and frontend**
    ```bash
