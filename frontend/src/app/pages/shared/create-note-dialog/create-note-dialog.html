@@ -1,5 +1,5 @@
 <div class="title-row">
-  <h2 mat-dialog-title>{{ data ? 'Notiz bearbeiten' : 'Neue Notiz anlegen' }}</h2>
+  <h2 mat-dialog-title>{{ data?.id ? 'Notiz bearbeiten' : 'Neue Notiz anlegen' }}</h2>
   <button mat-icon-button *ngIf="data" color="warn" (click)="deleteNote()" class="delete-btn">
     <mat-icon>delete</mat-icon>
   </button>
@@ -23,6 +23,6 @@
 <mat-dialog-actions align="end">
   <button mat-button (click)="close()">Abbrechen</button>
   <button mat-raised-button color="primary" (click)="save()">
-    {{ data ? 'Aktualisieren' : 'Speichern' }}
+    {{ data?.id ? 'Aktualisieren' : 'Speichern' }}
   </button>
 </mat-dialog-actions>
